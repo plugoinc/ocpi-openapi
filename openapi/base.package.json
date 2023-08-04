@@ -1,0 +1,12 @@
+{
+    "name": "@plugoinic/ocpi-openapi",
+    "version": "0.0.1",
+    "description": "OpenAPI 3.1.0 schema for OCPI 2.2.1",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "main": "",
+    "keywords": ["ocpi", "openapi", "schema", "plugo"],
+    "author": "plugo <dev@plugo.co.jp>",
+    "license": "MIT"
+}
