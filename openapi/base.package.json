@@ -8,8 +8,5 @@
     "main": "",
     "keywords": ["ocpi", "openapi", "schema", "plugo"],
     "author": "plugo <dev@plugo.co.jp>",
-    "license": "MIT",
-    "publishConfig": {
-      "registry": "https://npm.pkg.github.com/"
-    }
+    "license": "MIT"
 }
