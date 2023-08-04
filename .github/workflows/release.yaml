@@ -25,7 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: cp ./openapi/base.package.json ./dist/dts/package.json
-      - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV
+      - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV"
       - name: Create package.json
         env:
           __PACKAGE_NAME: '@plugoinc/ocpi-openapi-dts'
