@@ -10,9 +10,6 @@
     "author": "plugo <dev@plugo.co.jp>",
     "license": "MIT",
     "publishConfig": {
-      "registry": "xxx"
-    },
-    "files": [
-        "dist"
-    ]
+      "registry": "https://npm.pkg.github.com/"
+    }
 }
