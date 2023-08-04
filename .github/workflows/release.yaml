@@ -25,12 +25,13 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: cd dist/dts
-      - run: export __PACKAGE_NAME='@plugoinc/ocpi-openapi-dts'
       - run: export __OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`
-      - run: export __MAIN_FILE='dist/dts/schema.d.ts'
       - run: ls -la
       - run: cp ./openapi/base.package.json ./dist/dts/package.json
       - name: Create package.json
+        env:
+          __PACKAGE_NAME: '@plugoinc/ocpi-openapi-dts'
+          __MAIN_FILE: 'dist/dts/schema.d.ts'
         working-directory: ./dist/dts
         run: |
           cat ./package.json | jq --arg NAME $__PACKAGE_NAME '.name = $NAME' > ./package.json.tmp
