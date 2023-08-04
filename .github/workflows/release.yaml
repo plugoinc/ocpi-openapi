@@ -40,7 +40,7 @@ jobs:
           mv ./package.json.tmp ./package.json
           cat ./package.json
       - run: echo 'Publish to npmjs...'
-      - run: npm publish -access publich
+      - run: npm publish -access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         working-directory: ./dist/dts
