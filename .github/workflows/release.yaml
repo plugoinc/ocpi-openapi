@@ -1,15 +1,11 @@
 name: Publish d.ts package to npmjs
 on:
-  pull_request:
+  push:
     branches:
       - main
-  # push:
-  #   branches:
-  #     - main
-  #     - feature/ci # for debug
 
 jobs:
-  publish:
+  publish-dts:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
