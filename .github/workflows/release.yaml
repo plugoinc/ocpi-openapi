@@ -25,8 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: export __OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`
-      - run: cd dist/dts && npm init -y --scope=@plugoinc --name=ocpi-openapi-dts --version=$__OAS_VERSION --main=dist/dts/schema.d.ts
-      - run: cat package.json
+      - run: cd dist/dts && npm init -y --scope=@plugoinc --name=ocpi-openapi-dts --version=$__OAS_VERSION --main=dist/dts/schema.d.ts && cat package.json
 
       # - run: echo 'Publish to npmjs...'
       # - run: npm publish -access publich
