@@ -30,15 +30,16 @@ jobs:
       - run: export __MAIN_FILE='dist/dts/schema.d.ts'
       - run: ls -la
       - run: cp ./openapi/base.package.json ./dist/dts/package.json
-      - run: cat ./package.json | jq --arg NAME $__PACKAGE_NAME '.name = $NAME' > ./package.json.tmp \
+      - name: Create package.json
+        working-directory: ./dist/dts
+        run: |
+          cat ./package.json | jq --arg NAME $__PACKAGE_NAME '.name = $NAME' > ./package.json.tmp \
           && mv ./package.json.tmp ./package.json \
           && cat ./package.json | jq --arg VERSION $__OAS_VERSION '.version = $VERSION' > ./package.json.tmp \
           && mv ./package.json.tmp ./package.json \
           && cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp \
           && mv ./package.json.tmp ./package.json \
           && cat ./package.json
-        working-directory: ./dist/dts
-          # && cp openapi/LICENSE dist/dts/LICENSE \
 
       # - run: echo 'Publish to npmjs...'
       # - run: npm publish -access publich
