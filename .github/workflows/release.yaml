@@ -25,6 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: cp ./openapi/base.package.json ./dist/dts/package.json
+      - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV
       - name: Create package.json
         env:
           __PACKAGE_NAME: '@plugoinc/ocpi-openapi-dts'
@@ -33,7 +34,6 @@ jobs:
         run: |
           cat ./package.json | jq --arg NAME $__PACKAGE_NAME '.name = $NAME' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
-          export __OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`
           cat ./package.json | jq --arg VERSION $__OAS_VERSION '.version = $VERSION' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
           cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
