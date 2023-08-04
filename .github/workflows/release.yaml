@@ -39,9 +39,8 @@ jobs:
           cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
           cat ./package.json
-
-      # - run: echo 'Publish to npmjs...'
-      # - run: npm publish -access publich
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #   working-directory: ./dist/dts
+      - run: echo 'Publish to npmjs...'
+      - run: npm publish -access publich
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./dist/dts
