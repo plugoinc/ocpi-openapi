@@ -1,0 +1,60 @@
+description: StartSession payload
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/StartSession.yaml
+    examples:
+      'Simple StartSession example of just starting a session':
+        value:
+          country_code: 'NL'
+          party_id: 'STK'
+          id: '101'
+          start_date_time: '2020-03-09T10:17:09Z'
+          kwh: 0.0
+          cdr_token:
+            uid: '123abc'
+            type: 'RFID'
+            contract_id: 'NL-TST-C12345678-S'
+          auth_method: 'WHITELIST'
+          location_id: 'LOC1'
+          evse_uid: '3256'
+          connector_id: '1'
+          currency: 'EUR'
+          total_cost:
+            excl_vat: 2.5
+          status: 'PENDING'
+          last_updated: '2020-03-09T10:17:09Z'
+      'Simple StartSession example of a short finished session':
+        value:
+          country_code: 'BE'
+          party_id: 'BEC'
+          id: '101'
+          start_date_time: '2015-06-29T22:39:09Z'
+          end_date_time: '2015-06-29T23:50:16Z'
+          kwh: 41.00
+          cdr_token:
+            uid: '123abc'
+            type: 'RFID'
+            contract_id: 'NL-TST-C12345678-S'
+          auth_method: 'WHITELIST'
+          location_id: 'LOC1'
+          evse_uid: '3256'
+          connector_id: '1'
+          currency: 'EUR'
+          charging_periods:
+            - start_date_time: '2015-06-29T22:39:09Z'
+              dimensions:
+                - type: 'ENERGY'
+                  volume: 120
+                - type: 'MAX_CURRENT'
+                  volume: 30
+            - start_date_time: '2015-06-29T22:40:54Z'
+              dimensions:
+                - type: 'ENERGY'
+                  volume: 41000
+                - type: 'MIN_CURRENT'
+                  volume: 34
+            - start_date_time: '2015-06-29T23:07:09Z'
+              dimensions:
+                - type: 'ENERGY'
+                  volume: 41000

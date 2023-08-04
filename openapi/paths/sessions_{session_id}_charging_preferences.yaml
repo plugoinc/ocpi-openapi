@@ -1,0 +1,31 @@
+put:
+  tags:
+    - Sessions
+  summary: Sender /sessions/{session_id}/charging_preferences
+  description: |
+    Set/update the driver’s Charging Preferences for this charging session.
+  operationId: setChargingPreferences
+  security:
+    - api_key: []
+  parameters:
+    - name: session_id
+      in: path
+      schema:
+        type: string
+
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ChargingPreferences.yaml
+
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/ChargingPreferencesResponse.yaml
+    "403":
+      description: Forbidden
+      $ref: ../components/responses/Problem.yaml

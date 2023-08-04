@@ -1,0 +1,17 @@
+required:
+  - contract_id
+  - type
+  - uid
+type: object
+properties:
+  uid:
+    type: string
+  type:
+    type: string
+    enum:
+      - AD_HOC_USER
+      - APP_USER
+      - OTHER
+      - RFID
+  contract_id:
+    type: string

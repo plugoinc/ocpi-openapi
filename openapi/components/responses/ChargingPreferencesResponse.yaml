@@ -1,0 +1,20 @@
+required:
+  - status_code
+  - timestamp
+type: object
+properties:
+  status_code:
+    type: integer
+    format: int32
+  status_message:
+    type: string
+  data:
+    type: string
+    enum:
+      - ACCEPTED
+      - DEPARTURE_REQUIRED
+      - ENERGY_NEED_REQUIRED
+      - NOT_POSSIBLE
+      - PROFILE_TYPE_NOT_SUPPORTED
+  timestamp:
+    type: string

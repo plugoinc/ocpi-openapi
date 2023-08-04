@@ -1,0 +1,83 @@
+get:
+  tags:
+    - Sessions
+  summary: Receiver /sessions/{country_code}/{party_id}/{session_id}
+  description: |
+    Retrieve a Session object from the eMSP’s system with Session.id equal to {session_id}.
+  operationId: getSessionById
+  security:
+    - api_key: []
+  parameters:
+    - name: country_code
+      in: path
+      schema:
+        type: string
+    - name: party_id
+      in: path
+      schema:
+        type: string
+    - name: session_id
+      in: path
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Session.yaml
+    "403":
+      description: Forbidden
+      $ref: ../components/responses/Problem.yaml
+
+put:
+  tags:
+    - Sessions
+  summary: Receiver /sessions/{country_code}/{party_id}/{session_id}
+  description: |
+    Inform the eMSP’s system about a new/updated Session object in the CPO’s system.
+  operationId: putSessionById
+  security:
+    - api_key: []
+  parameters:
+    - name: country_code
+      in: path
+      schema:
+        type: string
+    - name: party_id
+      in: path
+      schema:
+        type: string
+    - name: session_id
+      in: path
+      schema:
+        type: string
+  requestBody:
+    $ref: ../components/requestBodies/Session.yaml
+
+patch:
+  tags:
+    - Sessions
+  summary: Receiver /sessions/{country_code}/{party_id}/{session_id}
+  description: |
+    Same as the PUT method, but only the fields/objects that need to be updated have to be present. Fields/objects which are not specified are considered unchange
+  operationId: patchSessionById
+  security:
+    - api_key: []
+  parameters:
+    - name: country_code
+      in: path
+      schema:
+        type: string
+    - name: party_id
+      in: path
+      schema:
+        type: string
+    - name: session_id
+      in: path
+      schema:
+        type: string
+  requestBody:
+    required: false
+    $ref: ../components/requestBodies/SessionPatch.yaml

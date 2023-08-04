@@ -1,0 +1,13 @@
+required:
+  - dimensions
+  - start_date_time
+type: object
+properties:
+  start_date_time:
+    type: string
+  dimensions:
+    type: array
+    items:
+      $ref: ./CdrDimension.yaml
+  tariff_id:
+    type: string

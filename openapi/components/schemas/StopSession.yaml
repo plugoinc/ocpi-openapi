@@ -1,0 +1,9 @@
+required:
+  - response_url
+  - session_id
+type: object
+properties:
+  response_url:
+    type: string
+  session_id:
+    type: string

@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Commands
+  summary: Sender /commands/{command}/{uid}
+  description: |
+    Typically implemented by market roles like: eMSP.
+    The Sender interface receives the asynchronous responses.
+  operationId: SenderCommandsUID
+  security:
+    - api_key: []
+  parameters:
+    - name: command
+      in: path
+      schema:
+        type: string
+        enum:
+          - CANCEL_RESERVATION
+          - RESERVE_NOW
+          - START_SESSION
+          - STOP_SESSION
+          - UNLOCK_CONNECTOR
+    - name: uid
+      in: path
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CommandResult.yaml

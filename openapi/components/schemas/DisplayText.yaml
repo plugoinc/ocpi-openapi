@@ -1,0 +1,17 @@
+required:
+  - language
+  - text
+type: object
+summary: DisplayText class
+properties:
+  language:
+    type: string
+    description: Language Code ISO 639-1.
+    example: en
+    maxLength: 2
+    minLength: 2
+  text:
+    type: string
+    example: Standard Tariff
+    description: Text to be displayed to a end user. No markup, html etc. allowed.
+    maxLength: 512

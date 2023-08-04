@@ -1,0 +1,10 @@
+required:
+  - excl_vat
+type: object
+properties:
+  excl_vat:
+    type: number
+    format: float
+  incl_vat:
+    type: number
+    format: float

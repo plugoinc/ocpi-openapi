@@ -1,0 +1,24 @@
+post:
+  tags:
+    - Commands
+  summary: Receiver /commands/START_SESSION
+  description: |
+    Typically implemented by market roles like: CPO.
+  security:
+    - api_key: []
+  operationId: startSession
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/StartSession.yaml
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/CommandResponse.yaml
+    401:
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml

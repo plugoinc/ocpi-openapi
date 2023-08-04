@@ -1,0 +1,4 @@
+name: offset
+in: query
+schema:
+  type: integer

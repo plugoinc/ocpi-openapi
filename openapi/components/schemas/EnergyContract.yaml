@@ -1,0 +1,16 @@
+summary: EnergyContract class
+description: Information about a energy contract that belongs to a Token so a driver could use his/her own energy contract when charging at a Charge Point.
+type: object
+required:
+  - supplier_name
+properties:
+  supplier_name:
+    type: string
+    description: Name of the energy supplier.
+    example: The Green Power Company
+    maxLength: 64
+  contract_id:
+    type: string
+    description: Contract ID at the energy supplier, that belongs to the owner of this token.
+    example: 123456789
+    maxLength: 64

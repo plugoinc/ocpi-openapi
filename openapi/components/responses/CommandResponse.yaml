@@ -1,0 +1,16 @@
+required:
+  - result
+  - timeout
+type: object
+properties:
+  result:
+    type: string
+    enum:
+      - NOT_SUPPORTED
+      - REJECTED
+      - UNKNOWN_SESSION
+      - ACCEPTED
+  timeout:
+    type: integer
+  message:
+    $ref: ../schemas/DisplayText.yaml

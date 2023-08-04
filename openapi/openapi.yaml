@@ -1,80 +1,72 @@
-openapi: 3.0.2
+openapi: 3.1.0
 info:
-  version: 1.0.0
-  title: Example.com
-  termsOfService: 'https://example.com/terms/'
+  version: 2.2.1
+  title: OCPI
+
   contact:
-    email: contact@example.com
-    url: 'http://example.com/contact'
+    email: thaddeusjiang@gmail.com
+    url: https://thaddeusjiang.com
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
   x-logo:
-    url: 'https://redocly.github.io/openapi-template/logo.png'
+    url: https://redocly.github.io/openapi-template/logo.png
   description: >
-    This is an **example** API to demonstrate features of OpenAPI specification
 
-    # Introduction
-
-    This API definition is intended to to be a good starting point for
-    describing your API in 
-
-    [OpenAPI/Swagger
-    format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md).
-
-    It also demonstrates features of
-    [create-openapi-repo](https://github.com/Redocly/create-openapi-repo) tool
-    and 
-
-    [Redoc](https://github.com/Redocly/Redoc) documentation engine. So beyond
-    the standard OpenAPI syntax we use a few 
-
-    [vendor
-    extensions](https://github.com/Redocly/Redoc/blob/master/docs/redoc-vendor-extensions.md).
-
-
-    # OpenAPI Specification
-
-    The goal of The OpenAPI Specification is to define a standard,
-    language-agnostic interface to REST APIs which
-
-    allows both humans and computers to discover and understand the capabilities
-    of the service without access to source
-
-    code, documentation, or through network traffic inspection. When properly
-    defined via OpenAPI, a consumer can 
-
-    understand and interact with the remote service with a minimal amount of
-    implementation logic. Similar to what
-
-    interfaces have done for lower-level programming, OpenAPI removes the
-    guesswork in calling the service.
-externalDocs:
-  description: Find out how to create a GitHub repo for your OpenAPI definition.
-  url: 'https://github.com/Rebilly/generator-openapi-repo'
-tags:
-  - name: Echo
-    description: Example echo operations
-  - name: User
-    description: Operations about user
 servers:
-  - url: 'http://example.com/api/v1'
-  - url: 'https://example.com/api/v1'
+  - url: https://www.server.com/ocpi/cpo/2.2
+  - url: https://ocpi.server.com/commands
+  - url: https://server.com/ocpi/cpo/2.2
+tags:
+  - name: Sessions
+    description: |
+      Module Identifier: sessions
+
+      Data owner: CPO
+
+      Type: Functional Module
+
+      The Session object describes one charging session. The Session object is owned by the CPO back-end system, and can be GET from the CPO system, or pushed by the CPO to another system.
+  - name: Commands
+    description: |
+      Module Identifier: commands
+
+      Type: Functional Module
+
+      The Commands module enables remote commands to be sent to a Location/EVSE. The following commands are supported:
+      - CANCEL_RESERVATION • RESERVE_NOW
+      - START_SESSION
+      - STOP_SESSION
+      - UNLOCK_CONNECTOR
+
+      See CommandType for a description of the different commands. Use the UNLOCK_CONNECTOR command with care, please read
+      the note at CommandType.
+
+      Module dependency: Locations module, Sessions module
 paths:
-  '/users/{username}':
-    $ref: 'paths/users@{username}.yaml'
-  /echo:
-    $ref: paths/echo.yaml
+  /sessions:
+    $ref: paths/sessions.yaml
+  /sessions/{session_id}/charging_preferences:
+    $ref: paths/sessions_{session_id}_charging_preferences.yaml
+  /sessions/{country_code}/{party_id}/{session_id}:
+    $ref: paths/sessions_{country_code}_{party_id}_{session_id}.yaml
+  /commands/START_SESSION:
+    $ref: paths/commands_start_session.yaml
+  /commands/STOP_SESSION:
+    $ref: paths/commands_stop_session.yaml
+  /commands/{command}/{uid}:
+    $ref: paths/commands_{command}_{uid}.yaml
+
 components:
   securitySchemes:
     main_auth:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: 'http://example.com/api/oauth/dialog'
+          authorizationUrl: http://example.com/api/oauth/dialog
           scopes:
-            'read:users': read users info
-            'write:users': modify or remove users
+            read:users: read users info
+            write:users: modify or remove users
     api_key:
       type: apiKey
       in: header

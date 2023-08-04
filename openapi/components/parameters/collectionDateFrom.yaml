@@ -1,0 +1,4 @@
+name: date_from
+in: query
+schema:
+  type: string

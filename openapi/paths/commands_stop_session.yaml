@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Commands
+  summary: Receiver /commands/STOP_SESSION
+  security:
+    - api_key: []
+  operationId: stopSession
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/StopSession.yaml
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/CommandResponse.yaml
+    401:
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml

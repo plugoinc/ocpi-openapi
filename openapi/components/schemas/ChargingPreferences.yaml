@@ -1,0 +1,18 @@
+required:
+  - profile_type
+type: object
+properties:
+  profile_type:
+    type: string
+    enum:
+      - CHEAP
+      - FAST
+      - GREEN
+      - REGULAR
+  departure_time:
+    type: string
+  energy_need:
+    type: number
+    format: float
+  discharge_allowed:
+    type: boolean

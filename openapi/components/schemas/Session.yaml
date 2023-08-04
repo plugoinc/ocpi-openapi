@@ -1,0 +1,65 @@
+required:
+  - auth_method
+  - cdr_token
+  - connector_id
+  - country_code
+  - currency
+  - evse_uid
+  - id
+  - kwh
+  - last_updated
+  - location_id
+  - party_id
+  - start_date_time
+  - status
+type: object
+properties:
+  country_code:
+    type: string
+  party_id:
+    type: string
+  id:
+    type: string
+  start_date_time:
+    type: string
+  end_date_time:
+    type: string
+  kwh:
+    type: number
+    format: float
+  cdr_token:
+    $ref: ./CdrToken.yaml
+  auth_method:
+    type: string
+    enum:
+      - AUTH_REQUEST
+      - COMMAND
+      - WHITELIST
+  authorization_reference:
+    type: string
+  location_id:
+    type: string
+  evse_uid:
+    type: string
+  connector_id:
+    type: string
+  meter_id:
+    type: string
+  currency:
+    type: string
+  charging_periods:
+    type: array
+    items:
+      $ref: ./ChargingPeriod.yaml
+  total_cost:
+    $ref: ./Price.yaml
+  status:
+    type: string
+    enum:
+      - ACTIVE
+      - COMPLETED
+      - INVALID
+      - PENDING
+      - RESERVATION
+  last_updated:
+    type: string

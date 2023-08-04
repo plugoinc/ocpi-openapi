@@ -1,0 +1,18 @@
+required:
+  - response_url
+  - token
+  - location_id
+type: object
+properties:
+  response_url:
+    type: string
+  token:
+    $ref: ./Token.yaml
+  location_id:
+    type: string
+  evse_uid:
+    type: string
+  connector_id:
+    type: string
+  authorization_reference:
+    type: string
