@@ -1,0 +1,42 @@
+name: Publish d.ts package to npmjs
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-dts:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      - run: echo 'Install yq...'
+      - run: curl -LJO https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+      - run: sudo mv yq_linux_amd64 /usr/local/bin/yq
+      - run: sudo chmod a+x /usr/local/bin/yq
+      - run: echo 'NPM install & build...'
+      - run: npm ci
+      - run: npm run build
+      - run: cp ./openapi/base.package.json ./dist/dts/package.json
+      - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV"
+      - name: Create package.json
+        env:
+          __PACKAGE_NAME: '@plugoinc/ocpi-openapi-dts'
+          __MAIN_FILE: 'schema.d.ts'
+        working-directory: ./dist/dts
+        run: |
+          cat ./package.json | jq --arg NAME $__PACKAGE_NAME '.name = $NAME' > ./package.json.tmp
+          mv ./package.json.tmp ./package.json
+          cat ./package.json | jq --arg VERSION $__OAS_VERSION '.version = $VERSION' > ./package.json.tmp
+          mv ./package.json.tmp ./package.json
+          cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
+          mv ./package.json.tmp ./package.json
+          cat ./package.json
+      - run: echo 'Publish to npmjs...'
+      - run: npm publish -access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./dist/dts

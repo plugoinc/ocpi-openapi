@@ -1,11 +1,11 @@
 openapi: 3.1.0
 info:
-  version: 2.2.1
+  version: 0.0.2
   title: OCPI
 
   contact:
-    email: thaddeusjiang@gmail.com
-    url: https://thaddeusjiang.com
+    email: dev@plugo.co.jp
+    url: https://plugo.co.jp/
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
