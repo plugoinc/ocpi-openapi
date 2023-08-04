@@ -24,9 +24,6 @@ jobs:
       - run: echo 'NPM install & build...'
       - run: npm ci
       - run: npm run build
-      - run: cd dist/dts
-      - run: export __OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`
-      - run: ls -la
       - run: cp ./openapi/base.package.json ./dist/dts/package.json
       - name: Create package.json
         env:
@@ -36,6 +33,7 @@ jobs:
         run: |
           cat ./package.json | jq --arg NAME $__PACKAGE_NAME '.name = $NAME' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
+          export __OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`
           cat ./package.json | jq --arg VERSION $__OAS_VERSION '.version = $VERSION' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
           cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
@@ -46,3 +44,4 @@ jobs:
       # - run: npm publish -access publich
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   working-directory: ./dist/dts
