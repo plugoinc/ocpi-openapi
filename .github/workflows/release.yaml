@@ -1,4 +1,4 @@
-name: Publish d.ts package to npmjs
+name: Release npm packages
 on:
   push:
     branches:
@@ -21,8 +21,8 @@ jobs:
       - run: echo 'NPM install & build...'
       - run: npm ci
       - run: npm run build
-      - run: cp ./openapi/base.package.json ./dist/dts/package.json
       - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV"
+      - run: cp ./openapi/base.package.json ./dist/yaml/package.json
       - name: Create package.json for yaml package...
         env:
           __PACKAGE_NAME: '@plugoinc/ocpi-openapi-yaml'
@@ -36,6 +36,7 @@ jobs:
           cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
           cat ./package.json
+      - run: cp ./openapi/base.package.json ./dist/dts/package.json
       - name: Create package.json for dts package...
         env:
           __PACKAGE_NAME: '@plugoinc/ocpi-openapi-dts'
