@@ -1,0 +1,3 @@
+schema:
+  type: string
+description: Link to the 'next' page should be provided when this is NOT the last page. The Link should also contain any filters present in the original request. See the examples below.

@@ -15,10 +15,17 @@ get:
   responses:
     "200":
       description: Success
+      headers:
+        Link:
+          $ref: ../components/headers/Link.yaml
+        X-Total-Count:
+          $ref: ../components/headers/X-Total-Count.yaml
+        X-Limit:
+          $ref: ../components/headers/X-Limit.yaml
       content:
         application/json:
           schema:
             $ref: ../components/schemas/Sessions.yaml
-    "403":
-      description: Forbidden
-      $ref: ../components/responses/Problem.yaml
+    "401":
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml

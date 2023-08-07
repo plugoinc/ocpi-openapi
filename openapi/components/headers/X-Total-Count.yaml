@@ -1,0 +1,4 @@
+schema:
+  type: number
+description: |
+  (Custom HTTP Header) The total number of objects available in the server system that match the given query (including the given query parameters, for example: date_to and date_from but excluding limit and offset) and that are available to this client. For example: The CPO server might return less CDR objects to an eMSP than the total number of CDRs available in the CPO system.
