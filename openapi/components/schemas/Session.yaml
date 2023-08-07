@@ -22,8 +22,13 @@ properties:
     type: string
   start_date_time:
     type: string
+    format: date-time
+    description: |
+      The timestamp when the session became ACTIVE in the Charge Point.
+      When the session is still PENDING, this field SHALL be set to the time the Session was created at the Charge Point. When a Session goes from PENDING to ACTIVE, this field SHALL be updated to the moment the Session went to ACTIVE in the Charge Point.
   end_date_time:
     type: string
+    format: date-time
   kwh:
     type: number
     format: float
@@ -35,12 +40,16 @@ properties:
       - AUTH_REQUEST
       - COMMAND
       - WHITELIST
+    description: |
+      Method used for authentication. This might change during a session, for example when the session was started with a reservation: ReserveNow: COMMAND. When the driver arrives and starts charging using a Token that is whitelisted: WHITELIST.
   authorization_reference:
     type: string
   location_id:
     type: string
   evse_uid:
     type: string
+    description: |
+      EVSE.uid of the EVSE of this Location on which the charging session is/was happening. Allowed to be set to: #NA when this session is created for a reservation, but no EVSE yet assigned to the driver.
   connector_id:
     type: string
   meter_id:

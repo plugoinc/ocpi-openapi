@@ -5,6 +5,7 @@ type: object
 properties:
   start_date_time:
     type: string
+    format: date-time
   dimensions:
     type: array
     items:
