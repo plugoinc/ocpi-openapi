@@ -1,0 +1,58 @@
+summary: Token patch payload
+required:
+  - last_updated
+type: object
+properties:
+  country_code:
+    type: string
+  party_id:
+    type: string
+  uid:
+    type: string
+  type:
+    description: TokenType enum
+    type: string
+    enum:
+      - AD_HOC_USER
+      - APP_USER
+      - OTHER
+      - RFID
+  contract_id:
+    type: string
+  visual_number:
+    type: string
+  issuer:
+    type: string
+  group_id:
+    type: string
+  valid:
+    type: boolean
+  whitelist:
+    type: string
+    summary: WhitelistType enum
+    description: Defines when authorization of a Token by the CPO is allowed.
+    enum:
+      - ALWAYS
+      - ALLOWED
+      - ALLOWED_OFFLINE
+      - NEVER
+
+  language:
+    type: string
+  default_profile_type:
+    type: string
+    summary: ProfileType enum
+    description: Different smart charging profile types.
+    enum:
+      - CHEAP
+      - FAST
+      - GREEN
+      - REGULAR
+  energy_contract:
+    $ref: ../schemas/EnergyContract.yaml
+  last_updated:
+    type: string
+
+example:
+  valid: false
+  last_updated: "2019-06-19T02:11:11Z"

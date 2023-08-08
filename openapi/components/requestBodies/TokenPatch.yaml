@@ -1,0 +1,5 @@
+description: Token patch payload
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/TokenPatch.yaml

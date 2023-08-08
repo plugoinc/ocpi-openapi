@@ -1,0 +1,5 @@
+description: Token payload
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Token.yaml

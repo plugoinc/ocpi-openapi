@@ -29,3 +29,80 @@ get:
       $ref: ../components/responses/OneTokenResponse.yaml
     "404":
       $ref: ../components/responses/NotFound.yaml
+
+put:
+  tags:
+    - Tokens
+  summary: Receiver /tokens/{country_code}/{party_id}/{token_uid}
+  description: |
+    New or updated Token objects are pushed from the eMSP to the CPO.
+  operationId: putToken
+  security:
+    - api_key: []
+  parameters:
+    - name: country_code
+      in: path
+      schema:
+        type: string
+    - name: party_id
+      in: path
+      schema:
+        type: string
+    - name: token_uid
+      in: path
+      schema:
+        type: string
+    - name: type
+      in: query
+      schema:
+        type: string # TokenType
+  requestBody:
+    $ref: ../components/requestBodies/Token.yaml
+  responses:
+    "200":
+      description: Token updated
+      $ref: ../components/responses/OneTokenResponse.yaml
+    "201":
+      description: Token created
+      $ref: ../components/responses/OneTokenResponse.yaml
+    "400":
+      $ref: ../components/responses/BadRequest.yaml
+    "404":
+      $ref: ../components/responses/NotFound.yaml
+
+patch:
+  tags:
+    - Tokens
+  summary: Receiver /tokens/{country_code}/{party_id}/{token_uid}
+  description: |
+    New or updated Token objects are pushed from the eMSP to the CPO.
+  operationId: patchToken
+  security:
+    - api_key: []
+  parameters:
+    - name: country_code
+      in: path
+      schema:
+        type: string
+    - name: party_id
+      in: path
+      schema:
+        type: string
+    - name: token_uid
+      in: path
+      schema:
+        type: string
+    - name: type
+      in: query
+      schema:
+        type: string # TokenType
+  requestBody:
+    $ref: ../components/requestBodies/TokenPatch.yaml
+  responses:
+    "200":
+      description: Token updated
+      $ref: ../components/responses/OneTokenResponse.yaml
+    "404":
+      $ref: ../components/responses/NotFound.yaml
+    "400":
+      $ref: ../components/responses/BadRequest.yaml
