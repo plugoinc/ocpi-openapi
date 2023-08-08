@@ -1,0 +1,59 @@
+summary: CdrLocation class
+description: The CdrLocation class contains only the relevant information from the Location object that is needed in a CDR.
+type: object
+required:
+  - id
+  - address
+  - city
+  - country
+  - coordinates
+  - evse_uid
+  - evse_id
+  - connector_id
+  - connector_standard
+  - connector_format
+  - connector_power_type
+
+properties:
+  id:
+    type: string
+    maxLength: 36
+    minLength: 36
+  name:
+    type: string
+    maxLength: 255
+  address:
+    type: string
+    maxLength: 45
+  city:
+    type: string
+    maxLength: 45
+  postal_code:
+    type: string
+    maxLength: 10
+  state:
+    type: string
+    maxLength: 20
+  country:
+    type: string
+    maxLength: 3
+  coordinates:
+    $ref: ./GeoLocation.yaml
+  evse_uid:
+    type: string
+    maxLength: 36
+    minLength: 36
+  evse_id:
+    type: string
+    maxLength: 48
+    minLength: 48
+  connector_id:
+    type: string
+    maxLength: 36
+    minLength: 36
+  connector_standard:
+    $ref: ./ConnectorType.yaml
+  connector_format:
+    $ref: ./ConnectorFormat.yaml
+  connector_power_type:
+    $ref: ./PowerType.yaml

@@ -1,0 +1,106 @@
+summary: CDR
+description: The CDR object describes the charging session and its costs, how these costs are composed, etc.
+type: object
+required:
+  - country_code
+  - party_id
+  - id
+  - start_date_time
+  - end_date_time
+  - cdr_token
+  - auth_method
+  - cdr_location
+  - currency
+  - total_cost
+  - total_energy
+  - total_time
+  - last_updated
+
+properties:
+  country_code:
+    type: string
+    maxLength: 2
+    minLength: 2
+  party_id:
+    type: string
+    maxLength: 3
+    minLength: 3
+  id:
+    type: string
+    maxLength: 39
+    minLength: 39
+  start_date_time:
+    type: string
+    format: date-time
+  end_date_time:
+    type: string
+    format: date-time
+  session_id:
+    type: string
+    maxLength: 36
+    minLength: 36
+  cdr_token:
+    $ref: ./CDRToken.yaml
+  auth_method:
+    $ref: ./AuthMethod.yaml
+  authorization_reference:
+    type: string
+    maxLength: 36
+    minLength: 36
+  cdr_location:
+    $ref: ./CdrLocation.yaml
+  meter_id:
+    type: string
+    maxLength: 255
+  currency:
+    type: string
+    maxLength: 3
+  tariffs:
+    type: array
+    items:
+      $ref: ./Tariff.yaml
+  charging_periods:
+    type: array
+    items:
+      $ref: ./ChargingPeriod.yaml
+  signed_data:
+    $ref: ./SignedData.yaml
+  total_cost:
+    $ref: ./Price.yaml
+  total_fixed_cost:
+    $ref: ./Price.yaml
+  total_energy:
+    type: number
+    format: float
+  total_energy_cost:
+    $ref: ./Price.yaml
+  total_time:
+    type: number
+    format: float
+  total_time_cost:
+    $ref: ./Price.yaml
+  total_parking_time:
+    type: number
+    format: float
+  total_parking_cost:
+    $ref: ./Price.yaml
+  total_reservation_cost:
+    $ref: ./Price.yaml
+  remark:
+    type: string
+    maxLength: 255
+  invoice_reference_id:
+    type: string
+    maxLength: 39
+    minLength: 39
+  credit:
+    type: boolean
+  credit_reference_id:
+    type: string
+    maxLength: 39
+    minLength: 39
+  home_charging_compensation:
+    type: boolean
+  last_updated:
+    type: string
+    format: date-time
