@@ -8,8 +8,8 @@
   "scripts": {
     "start": "openapi preview-docs",
     "build": "npm run clean && npm run build:yaml && npm run build:dts",
-    "build:yaml": "openapi bundle -o dist/yaml/dist.yaml",
-    "build:dts": "openapi-typescript dist/yaml/dist.yaml -o dist/dts/schema.d.ts",
+    "build:yaml": "openapi bundle -o dist/yaml/openapi.yaml",
+    "build:dts": "openapi-typescript dist/yaml/openapi.yaml -o dist/dts/schema.d.ts",
     "clean": "rm -rf dist || true",
     "test": "openapi lint"
   },

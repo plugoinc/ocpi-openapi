@@ -1,4 +1,4 @@
-name: Publish d.ts package to npmjs
+name: Release npm packages
 on:
   push:
     branches:
@@ -20,9 +20,23 @@ jobs:
       - run: echo 'NPM install & build...'
       - run: npm ci
       - run: npm run build
-      - run: cp ./openapi/base.package.json ./dist/dts/package.json
       - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV"
-      - name: Create package.json
+      - run: cp ./openapi/base.package.json ./dist/yaml/package.json
+      - name: Create package.json for yaml package...
+        env:
+          __PACKAGE_NAME: '@plugoinc/ocpi-openapi-yaml'
+          __MAIN_FILE: 'openapi.yaml'
+        working-directory: ./dist/yaml
+        run: |
+          cat ./package.json | jq --arg NAME $__PACKAGE_NAME '.name = $NAME' > ./package.json.tmp
+          mv ./package.json.tmp ./package.json
+          cat ./package.json | jq --arg VERSION $__OAS_VERSION '.version = $VERSION' > ./package.json.tmp
+          mv ./package.json.tmp ./package.json
+          cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
+          mv ./package.json.tmp ./package.json
+          cat ./package.json
+      - run: cp ./openapi/base.package.json ./dist/dts/package.json
+      - name: Create package.json for dts package...
         env:
           __PACKAGE_NAME: '@plugoinc/ocpi-openapi-dts'
           __MAIN_FILE: 'schema.d.ts'
@@ -35,8 +49,13 @@ jobs:
           cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
           cat ./package.json
-      - run: echo 'Publish to npmjs...'
-      - run: npm publish -access public
+      - name: Publish yaml package to npmjs...
+        run: npm publish -access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./dist/yaml
+      - name: Publish dts package to npmjs...
+        run: npm publish -access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         working-directory: ./dist/dts
