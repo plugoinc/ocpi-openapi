@@ -1,0 +1,5 @@
+summary: ConnectorFormat enum
+type: string
+enums:
+  - SOCKET
+  - CABLE

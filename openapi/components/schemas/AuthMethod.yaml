@@ -1,0 +1,6 @@
+summary: AuthMethod enum
+type: string
+enums:
+  - AUTH_REQUEST
+  - COMMAND
+  - WHITELIST
