@@ -1,1 +1,24 @@
-description: Bad Request status code
+description: Bad Request
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - status_code
+        - timestamp
+      properties:
+        status_code:
+          type: integer
+          enum:
+            - 400
+        status_message:
+          type: string
+          enum:
+            - Bad Request
+        timestamp:
+          type: string
+          format: date-time
+    example:
+      status_code: 400
+      status_message: Bad Request
+      timestamp: 2021-01-01T00:00:00Z

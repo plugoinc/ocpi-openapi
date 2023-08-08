@@ -1,15 +1,6 @@
-summary: Token Object
+summary: Token patch payload
 required:
-  - country_code
-  - party_id
-  - uid
-  - type
-  - contract_id
-  - issuer
-  - valid
-  - whitelist
   - last_updated
-
 type: object
 properties:
   country_code:
@@ -61,3 +52,7 @@ properties:
     $ref: ../schemas/EnergyContract.yaml
   last_updated:
     type: string
+
+example:
+  valid: false
+  last_updated: "2019-06-19T02:11:11Z"

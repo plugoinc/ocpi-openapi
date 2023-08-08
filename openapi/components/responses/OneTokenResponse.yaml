@@ -1,4 +1,4 @@
-description: Not Found
+description: Tokens GET Response with one Token object.
 content:
   application/json:
     schema:
@@ -7,19 +7,16 @@ content:
         - status_code
         - timestamp
       properties:
+        data:
+          $ref: ../schemas/Token.yaml
         status_code:
           type: integer
           enum:
-            - 404
+            - 1000
         status_message:
           type: string
           enum:
-            - Not Found
+            - Success
         timestamp:
           type: string
           format: date-time
-
-    example:
-      status_code: 404
-      status_message: Not Found
-      timestamp: 2021-01-01T00:00:00Z
