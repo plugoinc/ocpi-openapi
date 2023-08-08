@@ -1,0 +1,22 @@
+description: Tokens GET Response with one Token object.
+content:
+  application/problem+json:
+    schema:
+      type: object
+      required:
+        - status_code
+        - timestamp
+      properties:
+        data:
+          $ref: ../schemas/Token.yaml
+        status_code:
+          type: integer
+          enum:
+            - 1000
+        status_message:
+          type: string
+          enum:
+            - Success
+        timestamp:
+          type: string
+          format: date-time

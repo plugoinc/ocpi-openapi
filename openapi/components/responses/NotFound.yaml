@@ -1,1 +1,5 @@
-description: Not Found status code
+description: Not Found Response
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/NotFound.yaml
