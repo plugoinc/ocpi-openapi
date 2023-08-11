@@ -1,0 +1,5 @@
+name: country_code
+in: path
+required: true
+schema:
+  type: string

@@ -1,12 +1,45 @@
-# See https://redoc.ly/docs/cli/configuration/ for more information.
+extends:
+  - recommended
+
+rules:
+  rule/path-required-must-exist:
+    where:
+      - subject:
+          type: Parameter
+          property: in
+        assertions:
+          const: path
+    subject:
+      type: Parameter
+      property: required
+    assertions:
+      defined: true
+    message: Required must exist in path parameters.
+    severity: error
+  rule/path-parameters-required:
+    where:
+      - subject:
+          type: Parameter
+          property: in
+        assertions:
+          const: path
+    subject:
+      type: Parameter
+      property: required
+    assertions:
+      const: true
+    message: Path parameter must be required true.
+    suggest:
+      -  "true"
+    severity: error
+  # path-parameters-defined: error
+
 apis:
   main@1:
-    root: openapi/openapi.yaml
-lint:
-  extends:
-    - recommended
-  rules:
-    no-unused-components: warning
+    root: ./openapi/openapi.yaml
+    rules:
+      no-unused-components: warn
+
 features.openapi:
   htmlTemplate: ./docs/index.html
   theme:

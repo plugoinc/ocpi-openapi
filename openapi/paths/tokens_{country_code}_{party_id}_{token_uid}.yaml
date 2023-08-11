@@ -8,18 +8,9 @@ get:
   security:
     - api_key: []
   parameters:
-    - name: country_code
-      in: path
-      schema:
-        type: string
-    - name: party_id
-      in: path
-      schema:
-        type: string
-    - name: token_uid
-      in: path
-      schema:
-        type: string
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+    - $ref: ../components/parameters/tokenUid.yaml
     - name: type
       in: query
       schema:
@@ -40,22 +31,10 @@ put:
   security:
     - api_key: []
   parameters:
-    - name: country_code
-      in: path
-      schema:
-        type: string
-    - name: party_id
-      in: path
-      schema:
-        type: string
-    - name: token_uid
-      in: path
-      schema:
-        type: string
-    - name: type
-      in: query
-      schema:
-        type: string # TokenType
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+    - $ref: ../components/parameters/tokenUid.yaml
+    - $ref: ../components/parameters/type.yaml
   requestBody:
     $ref: ../components/requestBodies/Token.yaml
   responses:
@@ -80,22 +59,9 @@ patch:
   security:
     - api_key: []
   parameters:
-    - name: country_code
-      in: path
-      schema:
-        type: string
-    - name: party_id
-      in: path
-      schema:
-        type: string
-    - name: token_uid
-      in: path
-      schema:
-        type: string
-    - name: type
-      in: query
-      schema:
-        type: string # TokenType
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+    - $ref: ../components/parameters/tokenUid.yaml
   requestBody:
     $ref: ../components/requestBodies/TokenPatch.yaml
   responses:

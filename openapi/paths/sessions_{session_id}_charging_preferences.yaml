@@ -8,10 +8,7 @@ put:
   security:
     - api_key: []
   parameters:
-    - name: session_id
-      in: path
-      schema:
-        type: string
+    - $ref: ../components/parameters/sessionId.yaml
 
   requestBody:
     content:

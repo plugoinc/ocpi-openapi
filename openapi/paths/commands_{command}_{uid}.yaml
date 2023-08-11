@@ -9,20 +9,8 @@ post:
   security:
     - api_key: []
   parameters:
-    - name: command
-      in: path
-      schema:
-        type: string
-        enum:
-          - CANCEL_RESERVATION
-          - RESERVE_NOW
-          - START_SESSION
-          - STOP_SESSION
-          - UNLOCK_CONNECTOR
-    - name: uid
-      in: path
-      schema:
-        type: string
+    - $ref: ../components/parameters/command.yaml
+    - $ref: ../components/parameters/uid.yaml
   requestBody:
     content:
       application/json:
