@@ -16,7 +16,7 @@ rules:
       defined: true
     message: Required must exist in path parameters.
     severity: error
-  rule/path-parameters-required:
+  rule/path-parameter-must-required:
     where:
       - subject:
           type: Parameter
@@ -32,7 +32,6 @@ rules:
     suggest:
       -  "true"
     severity: error
-  # path-parameters-defined: error
 
 apis:
   main@1:
