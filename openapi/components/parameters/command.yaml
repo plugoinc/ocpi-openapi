@@ -1,0 +1,11 @@
+name: command
+in: path
+required: true
+schema:
+  type: string
+  enum:
+    - CANCEL_RESERVATION
+    - RESERVE_NOW
+    - START_SESSION
+    - STOP_SESSION
+    - UNLOCK_CONNECTOR

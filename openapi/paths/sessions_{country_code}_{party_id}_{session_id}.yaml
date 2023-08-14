@@ -8,18 +8,9 @@ get:
   security:
     - api_key: []
   parameters:
-    - name: country_code
-      in: path
-      schema:
-        type: string
-    - name: party_id
-      in: path
-      schema:
-        type: string
-    - name: session_id
-      in: path
-      schema:
-        type: string
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+    - $ref: ../components/parameters/sessionId.yaml
   responses:
     "200":
       description: Success
@@ -41,18 +32,9 @@ put:
   security:
     - api_key: []
   parameters:
-    - name: country_code
-      in: path
-      schema:
-        type: string
-    - name: party_id
-      in: path
-      schema:
-        type: string
-    - name: session_id
-      in: path
-      schema:
-        type: string
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+    - $ref: ../components/parameters/sessionId.yaml
   requestBody:
     $ref: ../components/requestBodies/Session.yaml
 
@@ -66,18 +48,9 @@ patch:
   security:
     - api_key: []
   parameters:
-    - name: country_code
-      in: path
-      schema:
-        type: string
-    - name: party_id
-      in: path
-      schema:
-        type: string
-    - name: session_id
-      in: path
-      schema:
-        type: string
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+    - $ref: ../components/parameters/sessionId.yaml
   requestBody:
     required: false
     $ref: ../components/requestBodies/SessionPatch.yaml

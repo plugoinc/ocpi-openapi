@@ -1,0 +1,5 @@
+name: token_uid
+in: path
+required: true
+schema:
+  type: string
