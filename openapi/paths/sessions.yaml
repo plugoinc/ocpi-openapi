@@ -14,18 +14,7 @@ get:
     - $ref: ../components/parameters/collectionLimit.yaml
   responses:
     "200":
-      description: Success
-      headers:
-        Link:
-          $ref: ../components/headers/Link.yaml
-        X-Total-Count:
-          $ref: ../components/headers/X-Total-Count.yaml
-        X-Limit:
-          $ref: ../components/headers/X-Limit.yaml
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/Sessions.yaml
+      $ref: ../components/responses/SessionsResponse.yaml
     "401":
       description: Unauthorized
       $ref: ../components/responses/Unauthorized.yaml

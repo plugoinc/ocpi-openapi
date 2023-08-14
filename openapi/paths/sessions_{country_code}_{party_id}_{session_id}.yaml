@@ -13,14 +13,7 @@ get:
     - $ref: ../components/parameters/sessionId.yaml
   responses:
     "200":
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/Session.yaml
-    "403":
-      description: Forbidden
-      $ref: ../components/responses/Problem.yaml
+      $ref: ../components/responses/SessionResponse.yaml
 
 put:
   tags:

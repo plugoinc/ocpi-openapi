@@ -8,7 +8,7 @@ content:
       type: object
       properties:
         data:
-          $ref: ../schemas/CommandResponse.yaml
+          $ref: ../schemas/Session.yaml
         status_code:
           type: integer
           format: int32
