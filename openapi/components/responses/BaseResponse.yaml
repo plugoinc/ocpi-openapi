@@ -1,0 +1,14 @@
+required:
+  - status_code
+  - timestamp
+properties:
+  data:
+    description: Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. * or +), or a single object (card. 1 or ?)
+  status_code:
+    type: number
+  status_message:
+    type: string
+  timestamp:
+    type: string
+    format: date-time
+    example: "2020-01-01T00:00:00Z"

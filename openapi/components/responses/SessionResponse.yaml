@@ -6,4 +6,4 @@ content:
         - $ref: ./BaseResponse.yaml
         - properties:
             data:
-              $ref: ../schemas/CommandResponse.yaml
+              $ref: ../schemas/Session.yaml
