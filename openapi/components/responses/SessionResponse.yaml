@@ -2,20 +2,8 @@ description: Success
 content:
   application/json:
     schema:
-      required:
-        - status_code
-        - timestamp
-      type: object
-      properties:
-        data:
-          $ref: ../schemas/Session.yaml
-        status_code:
-          type: integer
-          format: int32
-          example: 1000
-        status_message:
-          type: string
-          example: Success
-        timestamp:
-          type: string
-          example: "2020-01-01T00:00:00Z"
+      allOf:
+        - $ref: ./BaseResponse.yaml
+        - properties:
+            data:
+              $ref: ../schemas/Session.yaml

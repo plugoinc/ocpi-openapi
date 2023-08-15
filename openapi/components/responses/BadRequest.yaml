@@ -2,22 +2,7 @@ description: Bad Request
 content:
   application/json:
     schema:
-      type: object
-      required:
-        - status_code
-        - timestamp
-      properties:
-        status_code:
-          type: integer
-          enum:
-            - 400
-        status_message:
-          type: string
-          enum:
-            - Bad Request
-        timestamp:
-          type: string
-          format: date-time
+      $ref: ./BaseResponse.yaml
     example:
       status_code: 400
       status_message: Bad Request
