@@ -1,0 +1,24 @@
+type: object
+properties:
+  url:
+    type: string
+    format: uri
+  thumbnail:
+    type: string
+    format: uri
+  category:
+    type: string
+    enum:
+      - CHARGER
+      - ENTRANCE
+      - LOCATION
+      - NETWORK
+      - OPERATOR
+      - OTHER
+      - OWNER
+  type:
+    type: string
+  width:
+    type: number
+  height:
+    type: number

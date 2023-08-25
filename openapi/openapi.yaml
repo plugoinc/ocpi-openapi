@@ -58,6 +58,8 @@ paths:
     $ref: paths/commands_{command}_{uid}.yaml
   /tokens/{country_code}/{party_id}/{token_uid}:
     $ref: paths/tokens_{country_code}_{party_id}_{token_uid}.yaml
+  /credentials:
+    $ref: paths/credentials.yaml
 
 components:
   securitySchemes:
