@@ -1,0 +1,22 @@
+servers:
+  - url: https://ocpi.server.com
+get:
+  tags:
+    - Configurations
+  summary: /{version}/details
+  security:
+    - tokenAuth: []
+  operationId: getVersionDetails
+  parameters:
+    - name: version
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: OK
+      $ref: ../components/responses/Version.yaml
+    "401":
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml

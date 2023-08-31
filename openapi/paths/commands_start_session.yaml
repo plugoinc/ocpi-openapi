@@ -5,7 +5,7 @@ post:
   description: |
     Typically implemented by market roles like: CPO.
   security:
-    - api_key: []
+    - tokenAuth: []
   operationId: startSession
   requestBody:
     content:

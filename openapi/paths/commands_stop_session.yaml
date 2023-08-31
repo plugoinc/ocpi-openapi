@@ -3,7 +3,7 @@ post:
     - Commands
   summary: Receiver /commands/STOP_SESSION
   security:
-    - api_key: []
+    - tokenAuth: []
   operationId: stopSession
   requestBody:
     content:

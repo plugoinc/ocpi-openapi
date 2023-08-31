@@ -14,9 +14,7 @@ info:
   description: OCPI 2.2.1 specification
 
 servers:
-  - url: https://www.server.com/ocpi/cpo/2.2
-  - url: https://ocpi.server.com/commands
-  - url: https://server.com/ocpi/cpo/2.2
+  - url: https://www.example.com
 tags:
   - name: Sessions
     description: |
@@ -43,6 +41,7 @@ tags:
       the note at CommandType.
 
       Module dependency: Locations module, Sessions module
+
 paths:
   /sessions:
     $ref: paths/sessions.yaml
@@ -58,21 +57,16 @@ paths:
     $ref: paths/commands_{command}_{uid}.yaml
   /tokens/{country_code}/{party_id}/{token_uid}:
     $ref: paths/tokens_{country_code}_{party_id}_{token_uid}.yaml
+  /versions:
+    $ref: paths/versions.yaml
+  /{version}:
+    $ref: paths/{version}.yaml
+  /{version}/details:
+    $ref: paths/{version}_details.yaml
 
 components:
   securitySchemes:
-    main_auth:
-      type: oauth2
-      flows:
-        implicit:
-          authorizationUrl: http://example.com/api/oauth/dialog
-          scopes:
-            read:users: read users info
-            write:users: modify or remove users
-    api_key:
+    tokenAuth:
       type: apiKey
       in: header
-      name: api_key
-    basic_auth:
-      type: http
-      scheme: basic
+      name: Authorization

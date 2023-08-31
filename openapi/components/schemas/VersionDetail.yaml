@@ -1,0 +1,11 @@
+required:
+  - version
+  - endpoints
+type: object
+properties:
+  version:
+    $ref: ./VersionNumberEnum.yaml
+  endpoints:
+    type: array
+    items:
+      $ref: Endpoint.yaml
