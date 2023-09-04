@@ -1,0 +1,25 @@
+servers:
+  - url: https://www.server.com/ocpi/cpo
+  - url: https://www.server.com/ocpi/emsp
+get:
+  tags:
+    - Versions
+  summary: /{version}
+  description: |
+    also supports https://ocpi.server.com/{version}/details
+  security:
+    - tokenAuth: []
+  operationId: getVersion
+  parameters:
+    - name: version
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: OK
+      $ref: ../components/responses/Version.yaml
+    "401":
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml

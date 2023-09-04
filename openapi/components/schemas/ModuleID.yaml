@@ -1,0 +1,12 @@
+description: ModuleID enum
+type: string
+enum:
+  - cdrs
+  - chargingprofiles
+  - commands
+  - credentials
+  - hubclientinfo
+  - locations
+  - sessions
+  - tariffs
+  - tokens

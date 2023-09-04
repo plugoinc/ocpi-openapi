@@ -7,7 +7,7 @@ post:
     The Sender interface receives the asynchronous responses.
   operationId: SenderCommandsUID
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/command.yaml
     - $ref: ../components/parameters/uid.yaml

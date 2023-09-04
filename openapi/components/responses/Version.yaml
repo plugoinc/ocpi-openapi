@@ -1,0 +1,9 @@
+description: Version
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ./BaseResponse.yaml
+        - properties:
+            data:
+              $ref: ../schemas/VersionDetail.yaml

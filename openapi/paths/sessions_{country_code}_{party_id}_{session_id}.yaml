@@ -6,7 +6,7 @@ get:
     Retrieve a Session object from the eMSP’s system with Session.id equal to {session_id}.
   operationId: getSessionById
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/countryCode.yaml
     - $ref: ../components/parameters/partyId.yaml
@@ -25,7 +25,7 @@ put:
     Inform the eMSP’s system about a new/updated Session object in the CPO’s system.
   operationId: putSessionById
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/countryCode.yaml
     - $ref: ../components/parameters/partyId.yaml
@@ -41,7 +41,7 @@ patch:
     Same as the PUT method, but only the fields/objects that need to be updated have to be present. Fields/objects which are not specified are considered unchange
   operationId: patchSessionById
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/countryCode.yaml
     - $ref: ../components/parameters/partyId.yaml

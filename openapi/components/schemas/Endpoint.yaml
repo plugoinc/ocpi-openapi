@@ -1,0 +1,14 @@
+description: Endpoint
+type: object
+required:
+  - identifier
+  - role
+  - url
+properties:
+  identifier:
+    $ref: ModuleID.yaml
+  role:
+    $ref: InterfaceRole.yaml
+  url:
+    type: string
+    example: "https://www.server.com/ocpi/cpo/2.2"

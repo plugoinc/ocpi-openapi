@@ -1,0 +1,5 @@
+description: InterfaceRole enum
+type: string
+enum:
+  - SENDER
+  - RECEIVER

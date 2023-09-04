@@ -6,7 +6,7 @@ get:
     Fetch Sessions from a CPO system.
   operationId: getSessions
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/collectionDateFrom.yaml
     - $ref: ../components/parameters/collectionDateTo.yaml

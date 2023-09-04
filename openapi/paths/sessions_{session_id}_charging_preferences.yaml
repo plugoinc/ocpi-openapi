@@ -6,7 +6,7 @@ put:
     Set/update the driver’s Charging Preferences for this charging session.
   operationId: setChargingPreferences
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/sessionId.yaml
 

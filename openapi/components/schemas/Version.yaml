@@ -1,0 +1,10 @@
+required:
+  - version
+  - url
+type: object
+properties:
+  version:
+    $ref: VersionNumber.yaml
+  url:
+    type: string
+    example: "https://www.example.com/ocpi/cpo/2.2.1"

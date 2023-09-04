@@ -6,7 +6,7 @@ get:
     Retrieve a Token as it is stored in the CPO system.
   operationId: getTokenById
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/countryCode.yaml
     - $ref: ../components/parameters/partyId.yaml
@@ -29,7 +29,7 @@ put:
     New or updated Token objects are pushed from the eMSP to the CPO.
   operationId: putToken
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/countryCode.yaml
     - $ref: ../components/parameters/partyId.yaml
@@ -57,7 +57,7 @@ patch:
     New or updated Token objects are pushed from the eMSP to the CPO.
   operationId: patchToken
   security:
-    - api_key: []
+    - tokenAuth: []
   parameters:
     - $ref: ../components/parameters/countryCode.yaml
     - $ref: ../components/parameters/partyId.yaml
