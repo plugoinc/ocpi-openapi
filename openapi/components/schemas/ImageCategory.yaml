@@ -1,0 +1,10 @@
+summary: ImageCategory enum
+type: string
+enum:
+  - CHARGER
+  - ENTRANCE
+  - LOCATION
+  - NETWORK
+  - OPERATOR
+  - OTHER
+  - OWNER

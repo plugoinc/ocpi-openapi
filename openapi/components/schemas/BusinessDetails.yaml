@@ -1,0 +1,14 @@
+summary: BusinessDetails class
+
+type: object
+required:
+  - name
+properties:
+  name:
+    type: string
+    maxLength: 100
+    description: Name of the operator.
+  website:
+    $ref: URL.yaml
+  logo:
+    $ref: Image.yaml

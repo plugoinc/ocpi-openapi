@@ -61,7 +61,8 @@ paths:
     $ref: paths/versions.yaml
   /{version}:
     $ref: paths/{version}.yaml
-
+  /credentials:
+    $ref: paths/credentials.yaml
 components:
   securitySchemes:
     tokenAuth:
