@@ -3,8 +3,10 @@ servers:
   - url: https://www.server.com/ocpi/emsp
 get:
   tags:
-    - Configurations
+    - Versions
   summary: /{version}
+  description: |
+    also supports https://ocpi.server.com/{version}/details
   security:
     - tokenAuth: []
   operationId: getVersion

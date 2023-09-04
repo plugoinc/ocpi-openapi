@@ -6,9 +6,9 @@ required:
   - url
 properties:
   identifier:
-    $ref: ModuleIDEnum.yaml
+    $ref: ModuleID.yaml
   role:
-    $ref: InterfaceRoleEnum.yaml
+    $ref: InterfaceRole.yaml
   url:
     type: string
     example: "https://www.server.com/ocpi/cpo/2.2"

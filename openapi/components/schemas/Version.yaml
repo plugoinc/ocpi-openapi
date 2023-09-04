@@ -4,7 +4,7 @@ required:
 type: object
 properties:
   version:
-    $ref: VersionNumberEnum.yaml
+    $ref: VersionNumber.yaml
   url:
     type: string
     example: "https://www.example.com/ocpi/cpo/2.2.1"

@@ -61,8 +61,6 @@ paths:
     $ref: paths/versions.yaml
   /{version}:
     $ref: paths/{version}.yaml
-  /{version}/details:
-    $ref: paths/{version}_details.yaml
 
 components:
   securitySchemes:

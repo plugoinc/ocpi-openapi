@@ -4,7 +4,7 @@ required:
 type: object
 properties:
   version:
-    $ref: ./VersionNumberEnum.yaml
+    $ref: ./VersionNumber.yaml
   endpoints:
     type: array
     items:
