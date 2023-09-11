@@ -1,0 +1,24 @@
+summary: Image class
+type: object
+required:
+  - url
+  - category
+  - type
+properties:
+  url:
+    $ref: URL.yaml
+  thumbnail:
+    $ref: URL.yaml
+  category:
+    $ref: ImageCategory.yaml
+  type:
+    type: string
+    maxLength: 4
+    description: |
+      Image type like: gif, jpeg, png, svg.
+  width:
+    type: integer
+    maximum: 99999
+  height:
+    type: integer
+    maximum: 99999

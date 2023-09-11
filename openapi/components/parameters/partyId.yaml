@@ -3,3 +3,5 @@ in: path
 required: true
 schema:
   type: string
+  maxLength: 3
+  example: PLU

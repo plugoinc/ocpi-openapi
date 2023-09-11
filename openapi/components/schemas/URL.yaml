@@ -1,0 +1,4 @@
+summary: URL type
+type: string
+format: uri
+maxLength: 255

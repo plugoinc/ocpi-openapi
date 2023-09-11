@@ -30,7 +30,7 @@ rules:
       const: true
     message: Path parameter must be required true.
     suggest:
-      -  "true"
+      - "true"
     severity: error
 
 apis:

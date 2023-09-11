@@ -1,9 +1,9 @@
-description: Unauthorized
+description: method not allowed
 content:
   application/json:
     schema:
       $ref: BaseResponse.yaml
     example:
-      status_code: 401
-      status_message: Unauthorized
+      status_code: 405
+      status_message: method not allowed
       timestamp: 2021-01-01T00:00:00Z

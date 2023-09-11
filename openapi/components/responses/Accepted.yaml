@@ -1,0 +1,9 @@
+description: Accepted
+content:
+  application/json:
+    schema:
+      type: object
+    example:
+      status_code: 202
+      status_message: Accepted
+      timestamp: 2021-01-01T00:00:00Z
