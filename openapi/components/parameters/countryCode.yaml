@@ -3,3 +3,5 @@ in: path
 required: true
 schema:
   type: string
+  maxLength: 2
+  example: JP
