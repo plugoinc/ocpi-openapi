@@ -2,7 +2,6 @@ summary: StatusSchedule class
 type: object
 required:
   - period_begin
-  - period_end
   - status
 properties:
   period_begin:

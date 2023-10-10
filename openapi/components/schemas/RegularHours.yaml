@@ -15,10 +15,7 @@ properties:
     type: string
     maxLength: 5
     pattern: ^[0-1][0-9]|2[0-3]):[0-5][0-9]$
-    description: |
-      Begin of the regular period, in local time, given in hours and minutes. Must be in 24h format with leading zeros. Example: "18:15". Hour/Minute separator: ":" Regex: ([0-1][0-9]|2[0-3]):[0-5][0-9].
   period_end:
     type: string
     maxLength: 5
-    description: |
-      End of the regular period, in local time, syntax as for period_begin. Must be later than period_begin.
+    pattern: ^[0-1][0-9]|2[0-3]):[0-5][0-9]$

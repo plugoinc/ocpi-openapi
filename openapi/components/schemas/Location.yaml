@@ -6,7 +6,6 @@ required:
   - publish
   - address
   - city
-  - postal_code
   - country
   - coordinates
   - time_zone
