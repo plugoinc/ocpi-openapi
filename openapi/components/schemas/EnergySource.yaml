@@ -1,0 +1,13 @@
+description: EnergySource class
+type: object
+required:
+  - source
+  - percentage
+properties:
+  source:
+    $ref: ./EnergySourceCategory.yaml
+  percentage:
+    type: number
+    minimum: 0
+    maximum: 100
+    multipleOf: 0.01

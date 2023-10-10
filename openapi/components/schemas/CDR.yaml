@@ -102,5 +102,4 @@ properties:
   home_charging_compensation:
     type: boolean
   last_updated:
-    type: string
-    format: date-time
+    $ref: ./DateTime.yaml

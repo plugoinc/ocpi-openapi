@@ -1,0 +1,15 @@
+description: Hours class
+type: object
+required:
+  - twentyfourseven
+properties:
+  twentyfourseven:
+    type: boolean
+  regular_hours:
+    type: array
+    items:
+      $ref: ./RegularHours.yaml
+  exceptional_openings:
+    $ref: ./ExceptionalPeriod.yaml
+  exceptional_closings:
+    $ref: ./ExceptionalPeriod.yaml

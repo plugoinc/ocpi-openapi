@@ -1,0 +1,21 @@
+description: EnergyMix class
+type: object
+required:
+  - is_green_energy
+properties:
+  is_green_energy:
+    type: boolean
+  energy_sources:
+    type: array
+    items:
+      $ref: ./EnergySource.yaml
+  environ_impact:
+    type: array
+    items:
+      $ref: ./EnvironmentalImpact.yaml
+  supplier_name:
+    type: string
+    maxLength: 64
+  energy_product_name:
+    type: string
+    maxLength: 64

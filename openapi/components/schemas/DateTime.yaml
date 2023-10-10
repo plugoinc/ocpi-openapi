@@ -1,0 +1,5 @@
+summary: DateTime type
+type: string
+format: date-time
+examples:
+  - 2015-06-29T20:39:09Z

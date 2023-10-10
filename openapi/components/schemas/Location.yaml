@@ -1,0 +1,98 @@
+type: object
+required:
+  - country_code
+  - party_id
+  - id
+  - publish
+  - address
+  - city
+  - postal_code
+  - country
+  - coordinates
+  - time_zone
+  - last_updated
+properties:
+  country_code:
+    type: string
+    maxLength: 2
+    description: |
+      ISO-3166 alpha-2 country code of the CPO that 'owns' this Location.
+  party_id:
+    type: string
+    maxLength: 3
+    description: |
+      ID of the CPO that 'owns' this Location (following the ISO-15118 standard).
+  id:
+    type: string
+    maxLength: 36
+  publish:
+    type: boolean
+  publish_allowed_to:
+    # TODO: PublishTokenType
+    type: array
+    items:
+      type: string
+      maxLength: 3
+  name:
+    type: string
+    maxLength: 255
+  address:
+    type: string
+    maxLength: 45
+  city:
+    type: string
+    maxLength: 45
+  postal_code:
+    type: string
+    maxLength: 10
+  state:
+    type: string
+    maxLength: 20
+  country:
+    type: string
+    maxLength: 3
+  coordinates:
+    $ref: ./GeoLocation.yaml
+  related_locations:
+    type: array
+    items:
+      $ref: ./AdditionalGeoLocation.yaml
+  parking_type:
+    type: array
+    items:
+      $ref: ./ParkingType.yaml
+  evses:
+    type: array
+    items:
+      $ref: ./EVSE.yaml
+  directions:
+    type: array
+    items:
+      $ref: ./DisplayText.yaml
+  operator:
+    $ref: ./BusinessDetails.yaml
+  suboperator:
+    $ref: ./BusinessDetails.yaml
+  owner:
+    $ref: ./BusinessDetails.yaml
+  facilities:
+    type: array
+    items:
+      $ref: ./Facility.yaml
+  time_zone:
+    type: string
+    maxLength: 255
+  opening_times:
+    type: array
+    items:
+      $ref: ./Hours.yaml
+  charging_when_closed:
+    type: boolean
+  images:
+    type: array
+    items:
+      $ref: ./Image.yaml
+  energy_mix:
+    $ref: ./EnergyMix.yaml
+  last_updated:
+    $ref: ./DateTime.yaml

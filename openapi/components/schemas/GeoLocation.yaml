@@ -1,0 +1,16 @@
+summary: GeoLocation class
+type: object
+required:
+  - latitude
+  - longitude
+properties:
+  latitude:
+    type: string
+    maxLength: 10
+    description: |
+      Latitude of the point in decimal degree. Example: 50.770774. Decimal separator: "." Regex: -?[0-9]{1,2}\.[0-9]{5,7}
+  longitude:
+    type: string
+    maxLength: 11
+    description: |
+      Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: -?[0-9]{1,3}\.[0-9]{5,7}

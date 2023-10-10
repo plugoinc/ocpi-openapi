@@ -1,0 +1,5 @@
+description: EnvironmentalImpactCategory enum
+type: string
+enum:
+  - NUCLEAR_WASTE
+  - CARBON_DIOXIDE

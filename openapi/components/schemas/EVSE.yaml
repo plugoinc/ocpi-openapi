@@ -1,0 +1,52 @@
+# object EVSE
+type: object
+required:
+  - uid
+  - status
+  - connectors
+  - last_updated
+properties:
+  uid:
+    type: string
+    maxLength: 36
+  evse_id:
+    type: string
+    maxLength: 48
+  status:
+    $ref: ./Status.yaml
+  status_schedule:
+    type: array
+    items:
+      $ref: ./StatusSchedule.yaml
+  capabilities:
+    type: array
+    items:
+      $ref: ./Capability.yaml
+
+  connectors:
+    type: array
+    items:
+      $ref: ./Connector.yaml
+  floor_level:
+    type: string
+    maxLength: 4
+  coordinates:
+    $ref: ./GeoLocation.yaml
+  physical_reference:
+    type: string
+    maxLength: 16
+  directions:
+    type: array
+    items:
+      $ref: ./DisplayText.yaml
+  parking_restrictions:
+    type: array
+    items:
+      $ref: ./ParkingRestriction.yaml
+  images:
+    type: array
+    items:
+      $ref: ./Image.yaml
+  last_updated:
+    type: string
+    format: date-time

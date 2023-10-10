@@ -1,4 +1,4 @@
 name: date_to
 in: query
 schema:
-  type: string
+  $ref: ../schemas/DateTime.yaml

@@ -60,4 +60,4 @@ properties:
   energy_contract:
     $ref: ../schemas/EnergyContract.yaml
   last_updated:
-    type: string
+    $ref: ./DateTime.yaml

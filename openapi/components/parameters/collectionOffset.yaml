@@ -2,3 +2,4 @@ name: offset
 in: query
 schema:
   type: integer
+  example: 0
