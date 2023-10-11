@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Locations
+  summary: Sender /locations/{location_id}/{evse_uid}
+  operationId: getLocation_by_location_id_evse_uid
+  security:
+    - tokenAuth: []
+  parameters:
+    - name: location_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: evse_uid
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      $ref: ../components/responses/Location.yaml
+    "400":
+      $ref: ../components/responses/BadRequest.yaml
+    "404":
+      $ref: ../components/responses/NotFound.yaml
