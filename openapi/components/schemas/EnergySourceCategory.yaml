@@ -1,0 +1,11 @@
+description: EnergySourceCategory enum
+type: string
+enum:
+  - NUCLEAR
+  - GENERAL_FOSSIL
+  - COAL
+  - GAS
+  - GENERAL_GREEN
+  - SOLAR
+  - WIND
+  - WATER

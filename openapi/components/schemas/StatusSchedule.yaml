@@ -1,0 +1,12 @@
+summary: StatusSchedule class
+type: object
+required:
+  - period_begin
+  - status
+properties:
+  period_begin:
+    $ref: ./DateTime.yaml
+  period_end:
+    $ref: ./DateTime.yaml
+  status:
+    $ref: ./Status.yaml

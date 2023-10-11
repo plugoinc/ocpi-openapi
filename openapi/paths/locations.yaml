@@ -1,0 +1,20 @@
+get:
+  tags:
+    - Locations
+  summary: Sender /locations
+  description: |
+    Fetch a list of Locations
+  operationId: getLocations
+  security:
+    - tokenAuth: []
+  parameters:
+    - $ref: ../components/parameters/collectionDateFrom.yaml
+    - $ref: ../components/parameters/collectionDateTo.yaml
+    - $ref: ../components/parameters/collectionOffset.yaml
+    - $ref: ../components/parameters/collectionLimit.yaml
+  responses:
+    "200":
+      $ref: ../components/responses/LocationsResponse.yaml
+    "401":
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml

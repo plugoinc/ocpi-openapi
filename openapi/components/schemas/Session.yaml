@@ -71,4 +71,4 @@ properties:
       - PENDING
       - RESERVATION
   last_updated:
-    type: string
+    $ref: ./DateTime.yaml

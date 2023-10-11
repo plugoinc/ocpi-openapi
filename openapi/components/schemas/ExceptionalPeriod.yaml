@@ -1,0 +1,10 @@
+description: ExceptionalPeriod class
+type: object
+required:
+  - period_begin
+  - period_end
+properties:
+  period_begin:
+    $ref: ./DateTime.yaml
+  period_end:
+    $ref: ./DateTime.yaml

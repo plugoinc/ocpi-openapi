@@ -15,4 +15,4 @@ content:
             data:
               type: array
               items:
-                $ref: ../schemas/Session.yaml
+                $ref: ../schemas/Location.yaml

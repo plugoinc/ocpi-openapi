@@ -1,0 +1,13 @@
+description: EnvironmentalImpact class
+type: object
+required:
+  - category
+  - amount
+properties:
+  category:
+    $ref: ./EnvironmentalImpactCategory.yaml
+  amount:
+    type: number
+    minimum: 0
+    maximum: 100
+    multipleOf: 0.01

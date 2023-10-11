@@ -1,6 +1,6 @@
 summary: ConnectorType enum
 type: string
-enums:
+enum:
   - CHADEMO
   - CHAOJI
   - DOMESTIC_A

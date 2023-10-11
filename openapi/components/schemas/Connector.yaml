@@ -1,0 +1,37 @@
+summary: Connector Object
+type: object
+required:
+  - id
+  - standard
+  - format
+  - power_type
+  - max_voltage
+  - max_amperage
+  - last_updated
+properties:
+  id:
+    type: string
+    maxLength: 36
+  standard:
+    $ref: ./ConnectorType.yaml
+  format:
+    $ref: ./ConnectorFormat.yaml
+  power_type:
+    $ref: ./PowerType.yaml
+  max_voltage:
+    type: integer
+    minimum: 0
+    maximum: 999
+  max_amperage:
+    type: integer
+  max_electric_power:
+    type: integer
+  tariff_ids:
+    type: array
+    items:
+      type: string
+      maxLength: 36
+  terms_and_conditions:
+    $ref: URL.yaml
+  last_updated:
+    $ref: ./DateTime.yaml

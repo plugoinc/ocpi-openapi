@@ -1,0 +1,13 @@
+summary: Status enum
+description: The status of an EVSE.
+type: string
+enum:
+  - AVAILABLE
+  - BLOCKED
+  - CHARGING
+  - INOPERATIVE
+  - OUTOFORDER
+  - PLANNED
+  - REMOVED
+  - RESERVED
+  - UNKNOWN
