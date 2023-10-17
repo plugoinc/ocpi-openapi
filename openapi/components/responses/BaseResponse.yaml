@@ -3,11 +3,15 @@ required:
   - timestamp
 properties:
   data:
-    description: Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. * or +), or a single object (card. 1 or ?)
+    description: |
+      * or ?
+      Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. * or +), or a single object (card. 1 or ?)
   status_code:
     type: number
+    example: 200
   status_message:
     type: string
+    example: OK
   timestamp:
     type: string
     format: date-time
