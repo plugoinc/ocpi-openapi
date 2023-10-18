@@ -1,0 +1,9 @@
+description: Location
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ./BaseResponse.yaml
+        - properties:
+            data:
+              $ref: ../schemas/Location.yaml

@@ -1,0 +1,7 @@
+name: connector_id
+in: path
+required: true
+schema:
+  type: string
+  maxLength: 36
+  example: 1
