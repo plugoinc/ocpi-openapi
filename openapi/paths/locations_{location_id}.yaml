@@ -6,11 +6,7 @@ get:
   security:
     - tokenAuth: []
   parameters:
-    - name: location_id
-      in: path
-      required: true
-      schema:
-        type: string
+    - $ref: ../components/parameters/locationId.yaml
   responses:
     "200":
       $ref: ../components/responses/Location.yaml

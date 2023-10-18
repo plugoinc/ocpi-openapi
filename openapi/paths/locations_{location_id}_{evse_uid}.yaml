@@ -6,16 +6,8 @@ get:
   security:
     - tokenAuth: []
   parameters:
-    - name: location_id
-      in: path
-      required: true
-      schema:
-        type: string
-    - name: evse_uid
-      in: path
-      required: true
-      schema:
-        type: string
+    - $ref: ../components/parameters/locationId.yaml
+    - $ref: ../components/parameters/evseUid.yaml
   responses:
     "200":
       $ref: ../components/responses/Location.yaml

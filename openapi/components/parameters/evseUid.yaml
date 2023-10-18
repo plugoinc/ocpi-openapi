@@ -1,0 +1,7 @@
+name: evse_uid
+in: path
+required: true
+schema:
+  type: string
+  maxLength: 36
+  example: 3256
