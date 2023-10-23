@@ -1,0 +1,5 @@
+summary: ReservationRestrictionType enum
+type: string
+enum:
+  - RESERVATION
+  - RESERVATION_EXPIRES

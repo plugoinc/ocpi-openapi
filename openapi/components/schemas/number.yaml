@@ -1,0 +1,5 @@
+summary: number type
+type: number
+format: number
+minimum: 0.0001 # Minimum value for 4 decimal places
+maximum: 9999.9999 # Maximum value for 4 decimal places

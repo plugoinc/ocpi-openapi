@@ -1,2 +1,7 @@
 summary: country_code
 type: string
+maxLength: 2
+minLength: 2
+description: |
+  ISO-3166 alpha-2 country code
+example: JP

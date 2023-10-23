@@ -1,0 +1,8 @@
+summary: TariffType enum
+type: string
+enum:
+  - AD_HOC_PAYMENT
+  - PROFILE_CHEAP
+  - PROFILE_FAST
+  - PROFILE_GREEN
+  - REGULAR

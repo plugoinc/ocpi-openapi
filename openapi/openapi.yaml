@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  version: 0.0.11
+  version: 0.0.12
   title: OCPI
 
   contact:
@@ -71,6 +71,8 @@ paths:
     $ref: paths/locations_{location_id}_{evse_uid}.yaml
   /locations/{location_id}/{evse_uid}/{connector_id}:
     $ref: paths/locations_{location_id}_{evse_uid}_{connector_id}.yaml
+  /tariffs:
+    $ref: paths/tariffs.yaml
 
 components:
   securitySchemes:

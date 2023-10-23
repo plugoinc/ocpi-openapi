@@ -1,0 +1,11 @@
+summary: TariffElement class
+type: object
+required:
+  - price_components
+properties:
+  price_components:
+    type: array
+    items:
+      $ref: PriceComponent.yaml
+  restrictions:
+    $ref: TariffRestrictions.yaml

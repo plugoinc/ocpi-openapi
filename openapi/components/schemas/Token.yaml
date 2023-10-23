@@ -13,7 +13,7 @@ required:
 type: object
 properties:
   country_code:
-    type: string
+    $ref: ../schemas/CountryCode.yaml
   party_id:
     type: string
   uid:

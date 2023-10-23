@@ -1,10 +1,8 @@
 get:
   tags:
-    - Locations
-  summary: Sender /locations
-  description: |
-    Fetch a list of Locations
-  operationId: getLocations
+    - Tariffs
+  summary: Sender /tariffs
+  operationId: getTariffs
   security:
     - tokenAuth: []
   parameters:
@@ -14,7 +12,7 @@ get:
     - $ref: ../components/parameters/collectionLimit.yaml
   responses:
     "200":
-      $ref: ../components/responses/LocationsResponse.yaml
+      $ref: ../components/responses/TariffsResponse.yaml
     "400":
       $ref: ../components/responses/BadRequest.yaml
     "401":

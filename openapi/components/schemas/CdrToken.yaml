@@ -7,11 +7,9 @@ required:
 type: object
 properties:
   country_code:
-    type: string
-    description: ISO-3166 alpha-2 country code of the MSP that 'owns' this Token.
+    $ref: ./CountryCode.yaml
   party_id:
-    type: string
-    description: ID of the eMSP that 'owns' this Token (following the ISO-15118 standard).
+    $ref: ./PartyID.yaml
   uid:
     type: string
     description: |
