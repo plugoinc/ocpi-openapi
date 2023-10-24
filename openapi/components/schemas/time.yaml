@@ -1,0 +1,7 @@
+summary: time type
+description: |
+  time of day in local time, the time zone is defined in the time_zone field of the Location, for example 13:30, valid from this time of the day. Must be in 24h format with leading zeros. Hour/Minute separator: ":" Regex: ([0-1][0- 9]|2[0-3]):[0-5][0-9]
+type: string
+maxLength: 5
+minLength: 5
+pattern: ([0-1][0-9]|2[0-3]):[0-5][0-9]
