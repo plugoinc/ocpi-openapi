@@ -3,9 +3,9 @@ required:
 type: object
 properties:
   country_code:
-    type: string
+    $ref: ./CountryCode.yaml
   party_id:
-    type: string
+    $ref: ./PartyID.yaml
   id:
     type: string
   start_date_time:

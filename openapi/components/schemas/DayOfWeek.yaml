@@ -1,0 +1,10 @@
+summary: DayOfWeek enum
+type: string
+enum:
+  - MONDAY
+  - TUESDAY
+  - WEDNESDAY
+  - THURSDAY
+  - FRIDAY
+  - SATURDAY
+  - SUNDAY

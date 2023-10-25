@@ -18,13 +18,9 @@ required:
 
 properties:
   country_code:
-    type: string
-    maxLength: 2
-    minLength: 2
+    $ref: ./CountryCode.yaml
   party_id:
-    type: string
-    maxLength: 3
-    minLength: 3
+    $ref: ./PartyID.yaml
   id:
     type: string
     maxLength: 39

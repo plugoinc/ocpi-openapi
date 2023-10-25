@@ -1,0 +1,54 @@
+type: object
+required:
+  - country_code
+  - party_id
+  - id
+  - currency
+  - elements
+  - last_updated
+properties:
+  country_code:
+    $ref: ./CountryCode.yaml
+  party_id:
+    $ref: ./PartyID.yaml
+  id:
+    type: string
+    maxLength: 36
+  currency:
+    type: string
+    maxLength: 3
+    description: ISO-4217 code of the currency
+  type:
+    $ref: TariffType.yaml
+  tariff_alt_text:
+    $ref: ../schemas/DisplayText.yaml
+  tariff_alt_url:
+    $ref: ../schemas/URL.yaml
+  min_price:
+    $ref: ../schemas/Price.yaml
+  max_price:
+    $ref: ../schemas/Price.yaml
+  elements:
+    type: array
+    items:
+      $ref: ../schemas/TariffElement.yaml
+  start_date_time:
+    $ref: ../schemas/DateTime.yaml
+  end_date_time:
+    $ref: ../schemas/DateTime.yaml
+  energy_min:
+    $ref: EnergyMix.yaml
+  last_updated:
+    $ref: ../schemas/DateTime.yaml
+example:
+  country_code: DE
+  party_id: ALL
+  id: 16
+  currency: EUR
+  elements:
+    - price_components:
+        - type: ENERGY
+          price: 0.25
+          vat: 10.0
+          step_size: 1
+  last_updated: 2018-12-17T11:16:55Z

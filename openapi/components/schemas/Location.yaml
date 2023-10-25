@@ -12,15 +12,9 @@ required:
   - last_updated
 properties:
   country_code:
-    type: string
-    maxLength: 2
-    description: |
-      ISO-3166 alpha-2 country code of the CPO that 'owns' this Location.
+    $ref: ./CountryCode.yaml
   party_id:
-    type: string
-    maxLength: 3
-    description: |
-      ID of the CPO that 'owns' this Location (following the ISO-15118 standard).
+    $ref: ./PartyID.yaml
   id:
     type: string
     maxLength: 36

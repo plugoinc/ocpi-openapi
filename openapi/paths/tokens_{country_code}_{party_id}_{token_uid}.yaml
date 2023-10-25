@@ -18,6 +18,8 @@ get:
   responses:
     "200":
       $ref: ../components/responses/OneTokenResponse.yaml
+    "401":
+      $ref: ../components/responses/Unauthorized.yaml
     "404":
       $ref: ../components/responses/NotFound.yaml
 
@@ -46,6 +48,8 @@ put:
       $ref: ../components/responses/OneTokenResponse.yaml
     "400":
       $ref: ../components/responses/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/Unauthorized.yaml
     "404":
       $ref: ../components/responses/NotFound.yaml
 
@@ -68,7 +72,9 @@ patch:
     "200":
       description: Token updated
       $ref: ../components/responses/OneTokenResponse.yaml
-    "404":
-      $ref: ../components/responses/NotFound.yaml
     "400":
       $ref: ../components/responses/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/Unauthorized.yaml
+    "404":
+      $ref: ../components/responses/NotFound.yaml

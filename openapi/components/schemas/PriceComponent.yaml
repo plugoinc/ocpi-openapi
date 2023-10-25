@@ -1,0 +1,15 @@
+summary: PriceComponent class
+type: object
+required:
+  - type
+  - price
+  - step_size
+properties:
+  type:
+    $ref: TariffDimensionType.yaml
+  price:
+    $ref: number.yaml
+  vat:
+    $ref: number.yaml
+  step_size:
+    type: integer

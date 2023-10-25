@@ -1,0 +1,7 @@
+summary: TariffDimensionType enum
+type: string
+enum:
+  - ENERGY
+  - FLAT
+  - PARKING_TIME
+  - TIME

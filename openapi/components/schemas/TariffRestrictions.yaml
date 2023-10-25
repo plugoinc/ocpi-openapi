@@ -1,0 +1,31 @@
+summary: TariffRestrictions class
+type: object
+properties:
+  star_time:
+    $ref: time.yaml
+  end_time:
+    $ref: time.yaml
+  start_date:
+    $ref: day.yaml
+  end_date:
+    $ref: day.yaml
+  min_kwh:
+    $ref: number.yaml
+  max_kwh:
+    $ref: number.yaml
+  min_current:
+    $ref: number.yaml
+  max_current:
+    $ref: number.yaml
+  min_power:
+    $ref: number.yaml
+  max_power:
+    $ref: number.yaml
+  min_duration:
+    type: integer
+  max_duration:
+    type: integer
+  day_of_week:
+    $ref: DayOfWeek.yaml
+  reservation:
+    $ref: ReservationRestrictionType.yaml
