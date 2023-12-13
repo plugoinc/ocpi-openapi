@@ -14,23 +14,32 @@ jobs:
           node-version: '18'
       - run: npm ci
       - run: npm run test
-  build-client:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v3
+      - run: npm run build
+  #     - name: Archive node_modules
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: dist-without-markdown
+  #         path: |
+  #           dist
+  #           !dist/**/*.md
+  # build-client:
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - uses: actions/checkout@v3
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'oracle'
       - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV"
-      - run: openapi-generator-cli generate -i dist/yaml/openapi.yaml -g typescript-node -o dist/client-node --additional-properties=ngVersion=6.1.7,npmName=@plugoinc/ocpi-openapi-node,supportsES6=true,npmVersion=0.0.1,withInterfaces=tru
+      - run: openapi-generator generate -i dist/yaml/openapi.yaml -g typescript-node -o dist/client-node --additional-properties=ngVersion=6.1.7,npmName=@plugoinc/ocpi-openapi-node,supportsES6=true,npmVersion=0.0.1,withInterfaces=tru
       - name: Create package-lock.json for client-node package...
         working-directory: ./dist/client-node
         run: |
           cat ./package.json | jq --arg VERSION $__OAS_VERSION '.version = $VERSION' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
           cat ./package.json
-          npm i
+
+         # npm i
       # - name: Publish clint-node package to npmjs...
       #   run: npm publish -access public
       #   env:
