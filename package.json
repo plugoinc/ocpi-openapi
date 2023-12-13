@@ -7,13 +7,15 @@
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "npm run clean && npm run build:yaml && npm run build:dts",
+    "build": "npm run clean && npm run build:yaml && npm run build:dts && npm run build:client:js",
     "build:yaml": "openapi bundle -o dist/yaml/openapi.yaml",
     "build:dts": "openapi-typescript dist/yaml/openapi.yaml -o dist/dts/schema.d.ts",
+    "build:client:js": "openapi-generator-cli generate -i dist/yaml/openapi.yaml -g typescript-node -o dist/client-node --additional-properties=ngVersion=6.1.7,npmName=@plugoinc/ocpi-client,supportsES6=true,npmVersion=0.0.1,withInterfaces=true",
     "clean": "rm -rf dist || true",
     "test": "redocly lint"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0",
     "openapi-typescript": "^6.4.0"
   }
 }

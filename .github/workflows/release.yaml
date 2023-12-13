@@ -49,12 +49,24 @@ jobs:
           cat ./package.json | jq --arg MAIN $__MAIN_FILE '.main = $MAIN' > ./package.json.tmp
           mv ./package.json.tmp ./package.json
           cat ./package.json
+      - name: Create package.json & package-lock.json for client node package...
+        working-directory: ./dist/client-node
+        run: |
+          cat ./package.json | jq --arg VERSION $__OAS_VERSION '.version = $VERSION' > ./package.json.tmp
+          mv ./package.json.tmp ./package.json
+          cat ./package.json
+          npm i
       - name: Publish yaml package to npmjs...
         run: npm publish -access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         working-directory: ./dist/yaml
       - name: Publish dts package to npmjs...
+        run: npm publish -access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./dist/dts
+      - name: Publish client-node package to npmjs...
         run: npm publish -access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
