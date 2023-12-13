@@ -2,6 +2,12 @@
 
 ## Working on your OpenAPI Definition
 
+
+## Prerequistites
+
+- Node.js v18+
+- Java (openjdk 17 was checked)
+
 ### Install
 
 1. Install [Node JS](https://nodejs.org/).
