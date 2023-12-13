@@ -21,6 +21,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
+          distribution: 'oracle'
       - run: echo "__OAS_VERSION=`/usr/bin/yq e '.info.version' openapi/openapi.yaml`" >> "$GITHUB_ENV"
       - run: openapi-generator-cli generate -i dist/yaml/openapi.yaml -g typescript-node -o dist/client-node --additional-properties=ngVersion=6.1.7,npmName=@plugoinc/ocpi-openapi-node,supportsES6=true,npmVersion=0.0.1,withInterfaces=tru
       - name: Create package-lock.json for client-node package...
