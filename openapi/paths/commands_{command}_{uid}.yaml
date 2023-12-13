@@ -16,3 +16,9 @@ post:
       application/json:
         schema:
           $ref: ../components/schemas/CommandResult.yaml
+  responses:
+    200:
+      $ref: ../components/responses/CommandResponse.yaml
+    401:
+      $ref: ../components/responses/Unauthorized.yaml
+

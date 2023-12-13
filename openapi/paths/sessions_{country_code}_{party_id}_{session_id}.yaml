@@ -32,6 +32,11 @@ put:
     - $ref: ../components/parameters/sessionId.yaml
   requestBody:
     $ref: ../components/requestBodies/Session.yaml
+  responses:
+    "200":
+      $ref: ../components/responses/SessionResponse.yaml
+    "401":
+      $ref: ../components/responses/Unauthorized.yaml
 
 patch:
   tags:
@@ -49,3 +54,8 @@ patch:
   requestBody:
     required: false
     $ref: ../components/requestBodies/SessionPatch.yaml
+  responses:
+    "200":
+      $ref: ../components/responses/SessionResponse.yaml
+    "401":
+      $ref: ../components/responses/Unauthorized.yaml

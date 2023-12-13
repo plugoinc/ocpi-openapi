@@ -10,10 +10,13 @@
     "build": "npm run clean && npm run build:yaml && npm run build:dts",
     "build:yaml": "openapi bundle -o dist/yaml/openapi.yaml",
     "build:dts": "openapi-typescript dist/yaml/openapi.yaml -o dist/dts/schema.d.ts",
+    "pregen": "npm run build:yaml",
+    "gen:client:js": "openapi-generator-cli generate -i dist/yaml/openapi.yaml -g typescript-node -o dist/client-js --additional-properties=ngVersion=6.1.7,npmName=restClient,supportsES6=true,npmVersion=6.9.0,withInterfaces=true",
     "clean": "rm -rf dist || true",
     "test": "redocly lint"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0",
     "openapi-typescript": "^6.4.0"
   }
 }
