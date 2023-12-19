@@ -6,4 +6,4 @@ content:
         - $ref: ./BaseResponse.yaml
         - properties:
             data:
-              $ref: ../schemas/CDR.yaml
+              $ref: ../schemas/Cdr.yaml

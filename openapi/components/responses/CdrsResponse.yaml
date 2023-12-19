@@ -15,4 +15,4 @@ content:
             data:
               type: array
               items:
-                $ref: ../schemas/CDR.yaml
+                $ref: ../schemas/Cdr.yaml
