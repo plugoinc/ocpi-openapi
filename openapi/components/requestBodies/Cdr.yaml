@@ -2,4 +2,4 @@ description: CDR create request
 content:
   application/json:
     schema:
-      $ref: ../schemas/Cdr.yaml
+      $ref: ../schemas/CDR.yaml
