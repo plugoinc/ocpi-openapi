@@ -14,7 +14,7 @@ info:
   description: OCPI 2.2.1 specification
 
 servers:
-  - url: https://roaming-api.dev-native.plugo.co.jp
+  - url: https://www.example.com
     description: Development server
 tags:
   - name: Sessions
