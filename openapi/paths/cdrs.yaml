@@ -24,13 +24,14 @@ post:
   security:
     - tokenAuth: []
   requestBody:
-    $ref: ../components/requestBodies/Cdr.yaml
+    $ref: ../components/requestBodies/CDR.yaml
   responses:
     201:
       description: Created
       headers:
         Location:
-          $ref: ../components/schemas/URL.yaml
+          schema:
+            $ref: ../components/schemas/URL.yaml
           example: https://www.server.com/ocpi/emsp/2.2/cdrs/123456
     400:
       $ref: ../components/responses/BadRequest.yaml
