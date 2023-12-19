@@ -24,7 +24,10 @@ post:
   security:
     - tokenAuth: []
   requestBody:
-    $ref: ../components/requestBodies/CDR.yaml
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CDR.yaml
   responses:
     201:
       description: Created
