@@ -1,0 +1,18 @@
+description: CDRs Response.
+headers:
+  Link:
+    $ref: ../headers/Link.yaml
+  X-Total-Count:
+    $ref: ../headers/X-Total-Count.yaml
+  X-Limit:
+    $ref: ../headers/X-Limit.yaml
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ./BaseResponse.yaml
+        - properties:
+            data:
+              type: array
+              items:
+                $ref: ../schemas/CDR.yaml

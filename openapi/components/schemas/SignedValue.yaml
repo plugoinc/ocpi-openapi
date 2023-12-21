@@ -1,0 +1,17 @@
+description: SignedValue class
+type: object
+required:
+  - nature
+  - plain_data
+  - signed_data
+
+properties:
+  nature:
+    type: string
+    maxLength: 32
+  plain_data:
+    type: string
+    maxLength: 512
+  signed_data:
+    type: string
+    maxLength: 5000

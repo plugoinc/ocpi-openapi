@@ -1,0 +1,20 @@
+description: SignedData class
+type: object
+required:
+  - encoding_method
+  - signed_values
+properties:
+  encoding_method:
+    type: string
+    maxLength: 36
+  encoding_method_version:
+    type: integer
+  public_key:
+    type: string
+    maxLength: 512
+  signed_values:
+    type: array
+    $ref: ./SignedValue.yaml
+  url:
+    type: string
+    maxLength: 512

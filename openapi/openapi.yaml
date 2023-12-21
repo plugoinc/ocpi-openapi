@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  version: 0.0.12
+  version: 0.0.13
   title: OCPI
 
   contact:
@@ -15,6 +15,7 @@ info:
 
 servers:
   - url: https://www.example.com
+    description: Development server
 tags:
   - name: Sessions
     description: |
@@ -73,6 +74,10 @@ paths:
     $ref: paths/locations_{location_id}_{evse_uid}_{connector_id}.yaml
   /tariffs:
     $ref: paths/tariffs.yaml
+  /cdrs:
+    $ref: paths/cdrs.yaml
+  /cdrs/{cdr_id}:
+    $ref: paths/cdrs_{cdr_id}.yaml
 
 components:
   securitySchemes:

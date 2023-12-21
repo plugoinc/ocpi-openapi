@@ -1,0 +1,42 @@
+get:
+  tags:
+    - CDRs
+  summary: Sender /cdrs
+  operationId: getCdrs
+  security:
+    - tokenAuth: []
+  parameters:
+    - $ref: ../components/parameters/collectionDateFrom.yaml
+    - $ref: ../components/parameters/collectionDateTo.yaml
+    - $ref: ../components/parameters/collectionOffset.yaml
+    - $ref: ../components/parameters/collectionLimit.yaml
+  responses:
+    200:
+      $ref: ../components/responses/CdrsResponse.yaml
+    401:
+      $ref: ../components/responses/Unauthorized.yaml
+
+post:
+  tags:
+    - CDRs
+  summary: Receiver /cdrs
+  operationId: createCdr
+  security:
+    - tokenAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/CDR.yaml
+  responses:
+    201:
+      description: Created
+      headers:
+        Location:
+          schema:
+            $ref: ../components/schemas/URL.yaml
+          example: https://www.server.com/ocpi/emsp/2.2/cdrs/123456
+    400:
+      $ref: ../components/responses/BadRequest.yaml
+    401:
+      $ref: ../components/responses/Unauthorized.yaml

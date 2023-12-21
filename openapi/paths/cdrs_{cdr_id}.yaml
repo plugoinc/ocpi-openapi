@@ -1,0 +1,16 @@
+get:
+  tags:
+    - CDRs
+  summary: Receiver /cdrs/{cdr_id}
+  operationId: getCdrById
+  security:
+    - tokenAuth: []
+  parameters:
+    - $ref: ../components/parameters/cdrId.yaml
+  responses:
+    200:
+      $ref: ../components/responses/CdrResponse.yaml
+    401:
+      $ref: ../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../components/responses/NotFound.yaml

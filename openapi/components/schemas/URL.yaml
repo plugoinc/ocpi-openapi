@@ -1,4 +1,4 @@
-summary: URL type
+summary: URL
 type: string
 format: uri
 maxLength: 255

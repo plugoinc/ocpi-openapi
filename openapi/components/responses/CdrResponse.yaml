@@ -1,0 +1,9 @@
+description: CDR Response.
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ./BaseResponse.yaml
+        - properties:
+            data:
+              $ref: ../schemas/CDR.yaml
