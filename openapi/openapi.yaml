@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  version: 0.0.13
+  version: 0.0.14
   title: OCPI
 
   contact:
@@ -78,6 +78,8 @@ paths:
     $ref: paths/cdrs.yaml
   /cdrs/{cdr_id}:
     $ref: paths/cdrs_{cdr_id}.yaml
+  /chargingprofiles/{session_id}:
+    $ref: paths/chargingprofiles_{session_id}.yaml
 
 components:
   securitySchemes:

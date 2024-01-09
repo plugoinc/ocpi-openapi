@@ -1,0 +1,16 @@
+type: object
+required:
+  - charging_rate_unit
+properties:
+  start_date_time:
+    $ref: ./DateTime.yaml
+  duration:
+    type: integer
+  charging_rate_unit:
+    $ref: ./ChargingRateUnit.yaml
+  min_charging_rate:
+    $ref: ./number.yaml
+  charging_profile_period:
+    type: array
+    items:
+      $ref: ./ChargingProfilePeriod.yaml

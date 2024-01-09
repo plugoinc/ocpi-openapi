@@ -1,0 +1,28 @@
+put:
+  tags:
+    - ChargingProfiles
+  summary: "{chargingprofiles_endpoint_url}{session_id}"
+  description: |
+    Creates a new ChargingProfile on a session, or replaces an existing ChargingProfile on the EVSE.
+  operationId: updateChargingProfile
+  security:
+    - tokenAuth: []
+  parameters:
+    - $ref: ../components/parameters/sessionId.yaml
+  requestBody:
+    description: SetChargingProfile
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SetChargingProfile.yaml
+  responses:
+    "200":
+      description: OK
+      $ref: ../components/responses/SetChargingProfileResponse.yaml
+    "401":
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml
+    "404":
+      description: Not Found
+      $ref: ../components/responses/NotFound.yaml
