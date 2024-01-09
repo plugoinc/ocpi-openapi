@@ -1,0 +1,9 @@
+description: SetChargingProfileResponse
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ./BaseResponse.yaml
+        - properties:
+            data:
+              $ref: ../schemas/ChargingProfileResponse.yaml
