@@ -1,0 +1,9 @@
+type: object
+required:
+  - start_period
+  - limit
+properties:
+  start_period:
+    type: integer
+  limit:
+    $ref: ./number.yaml
