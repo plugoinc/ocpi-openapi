@@ -1,0 +1,22 @@
+get:
+  tags:
+    - HubClientInfo
+  summary: "Sender: {locations_endpoint_url}"
+  description: |
+    Get the list of known ClientInfo objects, last updated between the {date_from} and {date_to} paginated)
+  operationId: getHubClientInfos
+  security:
+    - tokenAuth: []
+
+  parameters:
+    - $ref: ../components/parameters/collectionDateFrom.yaml
+    - $ref: ../components/parameters/collectionDateTo.yaml
+    - $ref: ../components/parameters/collectionOffset.yaml
+    - $ref: ../components/parameters/collectionLimit.yaml
+  responses:
+    "200":
+      $ref: ../components/responses/ClientInfosResponse.yaml
+    "400":
+      $ref: ../components/responses/BadRequest.yaml
+    "401":
+      $ref: ../components/responses/Unauthorized.yaml

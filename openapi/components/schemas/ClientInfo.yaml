@@ -1,0 +1,18 @@
+type: object
+required:
+  - party_id
+  - country_code
+  - role
+  - status
+  - last_updated
+properties:
+  party_id:
+    $ref: ./PartyID.yaml
+  country_code:
+    $ref: ./CountryCode.yaml
+  role:
+    $ref: ./Role.yaml
+  status:
+    $ref: ./ConnectionStatus.yaml
+  last_updated:
+    $ref: ./DateTime.yaml
