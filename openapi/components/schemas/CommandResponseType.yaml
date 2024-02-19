@@ -1,0 +1,7 @@
+type: string
+summary: CommandResponseType enum
+enum:
+  - NOT_SUPPORTED
+  - REJECTED
+  - ACCEPTED
+  - UNKNOWN_SESSION

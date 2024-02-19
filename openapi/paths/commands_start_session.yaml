@@ -8,10 +8,7 @@ post:
     - tokenAuth: []
   operationId: startSession
   requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: ../components/schemas/StartSession.yaml
+    $ref: ../components/requestBodies/StartSession.yaml
   responses:
     200:
       $ref: ../components/responses/CommandResponse.yaml
