@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  version: 0.0.14
+  version: 0.0.15
   title: OCPI
 
   contact:
@@ -80,6 +80,10 @@ paths:
     $ref: paths/cdrs_{cdr_id}.yaml
   /chargingprofiles/{session_id}:
     $ref: paths/chargingprofiles_{session_id}.yaml
+  /clientinfo/{country_code}/{party_id}:
+    $ref: paths/clientinfo_{country_code}_{party_id}.yaml
+  /hubclientinfo:
+    $ref: paths/hubclientinfo.yaml
 
 components:
   securitySchemes:

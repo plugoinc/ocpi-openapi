@@ -1,0 +1,9 @@
+description: ClientInfo Response
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ./BaseResponse.yaml
+        - properties:
+            data:
+              $ref: ../schemas/ClientInfo.yaml

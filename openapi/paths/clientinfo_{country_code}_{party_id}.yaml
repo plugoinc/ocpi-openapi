@@ -1,0 +1,54 @@
+get:
+  tags:
+    - HubClientInfo
+  summary: "Receiver: {clientinfo_endpoint_url}/{country_code}/{party_id}"
+  description: |
+    Retrieve a ClientInfo object as it is stored in the connected clients system.
+  operationId: getClientInfo
+  security:
+    - tokenAuth: []
+  parameters:
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+  responses:
+    "200":
+      description: OK
+      $ref: ../components/responses/ClientInfoResponse.yaml
+    "401":
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml
+    "404":
+      description: Not Found
+      $ref: ../components/responses/NotFound.yaml
+
+put:
+  tags:
+    - HubClientInfo
+  summary: "Receiver: {clientinfo_endpoint_url}/{country_code}/{party_id}"
+  description: |
+    New or updated ClientInfo objects are pushed from the Hub to a connected client.
+  operationId: putClientInfo
+  security:
+    - tokenAuth: []
+  parameters:
+    - $ref: ../components/parameters/countryCode.yaml
+    - $ref: ../components/parameters/partyId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ClientInfo.yaml
+
+  responses:
+    "200":
+      description: Updated
+      $ref: ../components/responses/ClientInfoResponse.yaml
+    "201":
+      description: Created
+      $ref: ../components/responses/ClientInfoResponse.yaml
+    "400":
+      description: Bad Request
+      $ref: ../components/responses/BadRequest.yaml
+    "401":
+      description: Unauthorized
+      $ref: ../components/responses/Unauthorized.yaml
