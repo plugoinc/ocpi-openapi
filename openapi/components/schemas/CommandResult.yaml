@@ -4,18 +4,6 @@ required:
 type: object
 properties:
   result:
-    type: string
-    summary: CommandResultType enum
-    description: Result of the command that was send to the Charge Point.
-    enum:
-      - ACCEPTED
-      - CANCELED_RESERVATION
-      - EVSE_OCCUPIED
-      - EVSE_INOPERATIVE
-      - FAILED
-      - NOT_SUPPORTED
-      - REJECTED
-      - TIMEOUT
-      - UNKNOWN_RESERVATION
+    $ref: CommandResultType.yaml
   message:
     $ref: ../schemas/DisplayText.yaml

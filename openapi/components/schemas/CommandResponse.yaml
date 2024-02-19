@@ -4,13 +4,7 @@ required:
   - timeout
 properties:
   result:
-    type: string
-    enum:
-      - NOT_SUPPORTED
-      - REJECTED
-      - UNKNOWN_SESSION
-      - ACCEPTED
-    example: ACCEPTED
+    $ref: ../schemas/CommandResponseType.yaml
   timeout:
     type: integer
   message:

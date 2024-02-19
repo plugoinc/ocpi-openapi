@@ -1,0 +1,8 @@
+type: string
+summary: CommandType enum
+enum:
+  - CANCEL_RESERVATION
+  - RESERVE_NOW
+  - START_SESSION
+  - STOP_SESSION
+  - UNLOCK_CONNECTOR
